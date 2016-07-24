@@ -3,14 +3,11 @@ package com.example.andrearodriguez.adoptame;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import butterknife.ButterKnife;
-
-public class LoginActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        ButterKnife.bind(this);
+        setContentView(R.layout.activity_main);
     }
 }

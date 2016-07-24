@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "300548688323",
+    "firebase_url": "https://adoptame-da808.firebaseio.com",
+    "project_id": "adoptame-da808",
+    "storage_bucket": "adoptame-da808.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300548688323:android:c2cef8bd84a5d4ae",
+        "android_client_info": {
+          "package_name": "com.example.andrearodriguez.adoptame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "300548688323-bpdc25jk9ah7vbtngjvkq63ia06vslg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyColP6AgvlecIf19xLIDxFqj2AiGUxmklg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

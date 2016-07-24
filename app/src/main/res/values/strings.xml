@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Adoptame</string>
+    <string name="loging.message.email">Correo electrónico</string>
+    <string name="loging.message.password">Contraseña</string>
+    <string name="loging.button.singin">iniciar sesión</string>
+    <string name="loging.button.gotosignup">crear cuenta</string>
+</resources>

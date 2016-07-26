@@ -24,20 +24,27 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="CLOUDINARY_URL"
             android:value="@string/CLOUDINARY_URL" />
 
-        <activity
-            android:name=".login.ui.LoginActivity"
-            android:noHistory="true">
+        <activity android:name=".splash.SplashScreenActivity"
+            android:label="@string/app_name"
+            >
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".signup.ui.SignupActivity" />
+        <activity android:name=".login.ui.LoginActivity"/>
+
     </application>
 
 </manifest>

@@ -3,7 +3,6 @@
     <string name="loging.message.email">Correo electrónico</string>
     <string name="loging.message.password">Contraseña</string>
     <string name="loging.button.singin">iniciar sesión</string>
-    <string name="loging.button.gotosignup">crear cuenta</string>
 
     <string name="loging.error.messagge.signin">Imposible iniciar sesion %s</string>
     <string name="loging.error.messagge.signup">Imposible crear nuevo usuario %s</string>
@@ -13,6 +12,12 @@
     <string name="loging.message.telefono">Teléfono</string>
     <string name="loging.message.nit">Nit</string>
 
-    <string name="signup.title">Screan crear cuenta</string>
+    <string name="signup.title">Crear Cuenta</string>
     <string name="VerBebes.title">Ver en adopción</string>
+
+    <string name="loging.button.gotosignup">ir a crear cuenta ></string>
+    <string name="signup.button.signup">crear cuenta</string>
+    <string name="loging.message.representante">Representante legal</string>
+    <string name="verbebes.menu.action.signoff">Cerrar sesión</string>
+
 </resources>

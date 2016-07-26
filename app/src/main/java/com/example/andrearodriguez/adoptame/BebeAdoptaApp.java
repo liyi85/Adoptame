@@ -2,13 +2,16 @@ package com.example.andrearodriguez.adoptame;
 
 import android.app.Application;
 
-import com.example.andrearodriguez.adoptame.BebeAdoptaAppModule;
+
 import com.example.andrearodriguez.adoptame.domain.di.DomainModule;
 import com.example.andrearodriguez.adoptame.libs.base.di.LibsModule;
 import com.example.andrearodriguez.adoptame.login.di.DaggerLoginComponent;
 import com.example.andrearodriguez.adoptame.login.di.LoginComponent;
 import com.example.andrearodriguez.adoptame.login.di.LoginModule;
 import com.example.andrearodriguez.adoptame.login.ui.LoginView;
+import com.example.andrearodriguez.adoptame.signup.di.DaggerSignupComponent;
+import com.example.andrearodriguez.adoptame.signup.di.SignupComponent;
+import com.example.andrearodriguez.adoptame.signup.di.SignupModule;
 import com.firebase.client.Firebase;
 
 /**
@@ -56,4 +59,14 @@ public class BebeAdoptaApp extends Application {
                 .loginModule(new LoginModule(view))
                 .build();
     }
+    public SignupComponent getSignupComponent(LoginView view){
+        return DaggerSignupComponent
+                .builder()
+                .bebeAdoptaAppModule(bebeAdoptaAppModule)
+                .domainModule(domainModule)
+                .libsModule(new LibsModule(null))
+                .signupModule(new SignupModule(view))
+                .build();
+    }
+
 }

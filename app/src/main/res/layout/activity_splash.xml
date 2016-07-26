@@ -12,6 +12,7 @@
         android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
         android:src="@drawable/splash"
+        android:id="@+id/imageSplash"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>

@@ -15,6 +15,13 @@ public class Bebe {
 
     private String url;
     private String email;
+    private String name;
+    private String edad;
+    private String tamaño;
+    private String sexo;
+    private String fundacion;
+    private String vacunacion;
+    private String esterilizacion;
 
     public String getId() {
         return id;
@@ -46,5 +53,61 @@ public class Bebe {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
+
+    public String getTamaño() {
+        return tamaño;
+    }
+
+    public void setTamaño(String tamaño) {
+        this.tamaño = tamaño;
+    }
+
+    public String getFundacion() {
+        return fundacion;
+    }
+
+    public void setFundacion(String fundacion) {
+        this.fundacion = fundacion;
+    }
+
+    public String getVacunacion() {
+        return vacunacion;
+    }
+
+    public void setVacunacion(String vacunacion) {
+        this.vacunacion = vacunacion;
+    }
+
+    public String getEsterilizacion() {
+        return esterilizacion;
+    }
+
+    public void setEsterilizacion(String esterilizacion) {
+        this.esterilizacion = esterilizacion;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 }

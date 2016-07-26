@@ -1,9 +1,12 @@
-package com.example.andrearodriguez.adoptame;
+package com.example.andrearodriguez.adoptame.main.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.andrearodriguez.adoptame.R;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_logout){
+        if (item.getItemId() == R.id.action_logout) {
             logout();
         }
         return super.onOptionsItemSelected(item);

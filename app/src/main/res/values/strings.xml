@@ -19,5 +19,23 @@
     <string name="signup.button.signup">crear cuenta</string>
     <string name="loging.message.representante">Representante legal</string>
     <string name="verbebes.menu.action.signoff">Cerrar sesión</string>
+    <string name="signup_registro_completo">Gracias!</string>
+    <string name="err_msg_name">No puede estar vacio</string>
+    <string name="err_msg_email">Correo no valido</string>
+    <string name="err_msg_password">Ingrese una contraseña</string>
+    <string name="err_msg_phone">Ingrese número telefónico</string>
+    <string name="err_msg_nit">Ingrese nit o numero de cedula</string>
+    <string name="err_msg_direccion">No puede estar vacio</string>
+    <string name="err_msg_representante">Ingrese nombre del representante legal</string>
+
+    <string name="main.titles.perros">Perros</string>
+    <string name="main.title.gatos">Gatos</string>
+    <string name="main.title.otros">Otros</string>
+    <string name="main.title.perdidos">Perdidos y encontrados</string>
+    <string name="main.notice.upload.init">En proceso de publicación</string>
+    <string name="main.notice.upload.complete">Publicado exitosamente</string>
+    <string name="main.error.dispatch.camera">Error al crear archivo</string>
+    <string name="menu.action.logout">Cerrar sesión</string>
+    <string name="main.mesage.picture.source">Seleccione una foto</string>
 
 </resources>

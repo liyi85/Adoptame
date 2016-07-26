@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 
 
 import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
-import com.example.andrearodriguez.adoptame.MainActivity;
+import com.example.andrearodriguez.adoptame.main.ui.MainActivity;
 import com.example.andrearodriguez.adoptame.R;
 import com.example.andrearodriguez.adoptame.login.LoginPresenter;
 import com.example.andrearodriguez.adoptame.signup.ui.SignupActivity;

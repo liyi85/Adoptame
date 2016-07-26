@@ -29,10 +29,17 @@
             android:name="CLOUDINARY_URL"
             android:value="@string/CLOUDINARY_URL" />
 
+        <activity android:name=".login.ui.LoginActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".splash.SplashScreenActivity"
             android:label="@string/app_name">
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,12 +47,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" />
-        <activity android:name=".login.ui.LoginActivity"/>
+
+
         <activity android:name=".signup.ui.SignupActivity">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".login.ui.LoginActivity"/>
         </activity>
+
+
+        <activity android:name=".main.ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
 
     </application>
 

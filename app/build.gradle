@@ -52,4 +52,6 @@ dependencies {
     compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
 
 
+    compile 'com.android.support:support-v4:24.1.1'
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }

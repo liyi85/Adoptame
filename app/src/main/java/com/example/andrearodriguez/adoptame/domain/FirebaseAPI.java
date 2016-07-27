@@ -1,6 +1,7 @@
 package com.example.andrearodriguez.adoptame.domain;
 
 import com.example.andrearodriguez.adoptame.entities.Bebe;
+import com.example.andrearodriguez.adoptame.entities.Fundacion;
 import com.firebase.client.AuthData;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
@@ -17,6 +18,8 @@ public class FirebaseAPI {
 
     private Firebase firebase;
     private ChildEventListener bebesEventListener;
+
+
 
     public FirebaseAPI(Firebase firebase) {
         this.firebase = firebase;
@@ -90,11 +93,13 @@ public class FirebaseAPI {
 
     public String getAuthEmail(){
         String email = null;
+
         if (firebase.getAuth() != null){
             Map<String, Object> providerData = firebase.getAuth().getProviderData();
             email = providerData.get("email").toString();
         }
         return email;
+
     }
     public void logout(){
         firebase.unauth();
@@ -114,6 +119,7 @@ public class FirebaseAPI {
     }
     public void signup(String email, String password, final FirebaActionListenerCallback listenerCallback){
         firebase.createUser(email, password, new Firebase.ValueResultHandler<Map<String, Object>>() {
+
             @Override
             public void onSuccess(Map<String, Object> stringObjectMap) {
                 listenerCallback.onSucces();

@@ -55,7 +55,20 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         app = (BebeAdoptaApp)getApplication();
         setupInjection();
         loginPresenter.onCreate();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loginPresenter.onResume();
         loginPresenter.validateLogin(null, null);
+    }
+
+    @Override
+    protected void onPause() {
+        loginPresenter.onPause();
+        super.onPause();
     }
 
     @Override

@@ -22,6 +22,7 @@ import com.firebase.client.Firebase;
 public class BebeAdoptaApp extends Application {
 
     private final static String EMAIL_KEY = "email";
+    private final static String NIT_KEY = "nit";
     private final static String SHARED_PREFERENCES_NAME = "UsersPrefs";
     private final static String FIREBASE_URL = "https://adoptameapp.firebaseIO.com";
 
@@ -46,6 +47,9 @@ public class BebeAdoptaApp extends Application {
 
     public String getEmailKey() {
         return EMAIL_KEY;
+    }
+    public String getNitKey() {
+        return NIT_KEY;
     }
 
     public String getSharedPreferencesName() {

@@ -1,6 +1,7 @@
 package com.example.andrearodriguez.adoptame.signup.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -16,10 +18,17 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
+import com.example.andrearodriguez.adoptame.entities.Fundacion;
 import com.example.andrearodriguez.adoptame.main.ui.MainActivity;
 import com.example.andrearodriguez.adoptame.R;
 import com.example.andrearodriguez.adoptame.login.LoginPresenter;
 import com.example.andrearodriguez.adoptame.login.ui.LoginView;
+import com.firebase.client.Config;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import javax.inject.Inject;
 
@@ -27,7 +36,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SignupActivity extends AppCompatActivity implements LoginView{
+public class SignupActivity extends AppCompatActivity implements LoginView {
 
     @Bind(R.id.txtEmail)
     EditText txtEmail;
@@ -67,23 +76,35 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
     @Bind(R.id.layoutMainContainer2)
     RelativeLayout container;
 
+    Firebase ref;
+
 
     private BebeAdoptaApp app;
 
+
     @Inject
     LoginPresenter loginPresenter;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         ButterKnife.bind(this);
 
         setTitle(R.string.signup_title);
-        app = (BebeAdoptaApp)getApplication();
+        app = (BebeAdoptaApp) getApplication();
         setupInjection();
         loginPresenter.onCreate();
-        loginPresenter.validateLogin(null, null);
+
+
+        Firebase.setAndroidContext(this);
+        ref = new Firebase("https://adoptameapp.firebaseIO.com");
 
         txtEmail.addTextChangedListener(new MyTextWatcher(txtEmail));
         txtPassword.addTextChangedListener(new MyTextWatcher(txtPassword));
@@ -92,6 +113,19 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
         txtAddress.addTextChangedListener(new MyTextWatcher(txtAddress));
         txtFundacion.addTextChangedListener(new MyTextWatcher(txtFundacion));
         txtTelefono.addTextChangedListener(new MyTextWatcher(txtTelefono));
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loginPresenter.onResume();
+
+    }
+
+    @Override
+    protected void onPause() {
+        loginPresenter.onPause();
+        super.onPause();
     }
 
     @Override
@@ -124,7 +158,9 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
     @Override
     public void handleSignUp() {
         submitForm();
+        agregandoFirebas();
     }
+
 
     private void submitForm() {
         if (!validateRepresentante()) {
@@ -156,6 +192,9 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
                 txtPassword.getText().toString());
     }
 
+
+
+
     private boolean validateFundacion() {
         if (txtFundacion.getText().toString().trim().isEmpty()) {
             wraperfundacion.setError(getString(R.string.err_msg_name));
@@ -169,9 +208,8 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
     }
 
     private boolean validateEmail() {
-        String email = txtEmail.getText().toString().trim();
 
-        if (email.isEmpty() || !isValidEmail(email)) {
+        if (txtEmail.getText().toString().trim().isEmpty() || !isValidEmail(txtEmail.getText().toString().trim())) {
             wraperemail.setError(getString(R.string.err_msg_email));
             requestFocus(txtEmail);
             return false;
@@ -205,6 +243,7 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
 
         return true;
     }
+
     private boolean validateNit() {
         if (txtNit.getText().toString().trim().isEmpty()) {
             wrapernit.setError(getString(R.string.err_msg_nit));
@@ -228,6 +267,7 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
 
         return true;
     }
+
     private boolean validateRepresentante() {
         if (txtRepresenta.getText().toString().trim().isEmpty()) {
             wraperrepresentante.setError(getString(R.string.err_msg_representante));
@@ -240,8 +280,86 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
         return true;
     }
 
+    private  void agregandoFirebas(){
+
+        String nombrefundacion =   txtFundacion.getText().toString().trim();
+
+    ref.child("users").child(nombrefundacion).child("nombre fundacion").setValue(nombrefundacion, new Firebase.CompletionListener() {
+
+
+        @Override
+        public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+            if (firebaseError != null) {
+                Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+            }
+
+        }
+
+
+    });
+        String representante = txtRepresenta.getText().toString().trim();
+
+        ref.child("users").child(nombrefundacion).child("representante").setValue(representante, new Firebase.CompletionListener() {
+            @Override
+            public void onComplete(FirebaseError error, Firebase firebase) {
+                if (error != null) {
+                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+        String direccion = txtAddress.getText().toString().trim();
+
+        ref.child("users").child(nombrefundacion).child("direccion").setValue(direccion, new Firebase.CompletionListener() {
+            @Override
+            public void onComplete(FirebaseError error, Firebase firebase) {
+                if (error != null) {
+                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+        String telefono = txtTelefono.getText().toString().trim();
+
+        ref.child("users").child(nombrefundacion).child("telefono").setValue(telefono, new Firebase.CompletionListener() {
+            @Override
+            public void onComplete(FirebaseError error, Firebase firebase) {
+                if (error != null) {
+                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        String nit = txtNit.getText().toString().trim();
+
+    ref.child("users").child(nombrefundacion).child("nit").setValue(nit, new Firebase.CompletionListener() {
+        @Override
+        public void onComplete(FirebaseError error, Firebase firebase) {
+            if (error != null) {
+                Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+            }
+
+        }
+    });
+        String correo = txtEmail.getText().toString().trim();
+
+        ref.child("users").child(nombrefundacion).child("correo").setValue(correo, new Firebase.CompletionListener() {
+            @Override
+            public void onComplete(FirebaseError error, Firebase firebase) {
+                if (error != null) {
+                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+}
+
+
+
     private static boolean isValidEmail(String email) {
-        return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
     private void requestFocus(View view) {
@@ -250,6 +368,8 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
         }
 
     }
+
+
     private class MyTextWatcher implements TextWatcher {
 
         private View view;
@@ -292,7 +412,6 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
     }
 
 
-
     @Override
     public void handleSignIn() {
         throw new UnsupportedOperationException("Operation is not valid in SignupActivity");
@@ -327,7 +446,7 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
 
     }
 
-    private void setInputs (boolean enabled){
+    private void setInputs(boolean enabled) {
         txtEmail.setEnabled(enabled);
         txtPassword.setEnabled(enabled);
         txtTelefono.setEnabled(enabled);
@@ -337,8 +456,10 @@ public class SignupActivity extends AppCompatActivity implements LoginView{
         txtRepresenta.setEnabled(enabled);
         btnSignUp.setEnabled(enabled);
     }
+
     private void setupInjection() {
         app.getSignupComponent(this).inject(this);
 
     }
+
 }

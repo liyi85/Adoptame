@@ -27,13 +27,22 @@ public class LoginPresenterImp implements LoginPresenter {
 
     @Override
     public void onCreate() {
-        eventBus.register(this);
+
     }
 
     @Override
     public void onDestroy() {
-        eventBus.unregister(this);
         loginView = null;
+    }
+
+    @Override
+    public void onResume() {
+        eventBus.register(this);
+    }
+
+    @Override
+    public void onPause() {
+        eventBus.unregister(this);
     }
 
 

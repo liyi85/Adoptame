@@ -1,5 +1,7 @@
 package com.example.andrearodriguez.adoptame.entities;
 
+import android.media.Image;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
@@ -22,6 +24,7 @@ public class Bebe {
     private String fundacion;
     private String vacunacion;
     private String esterilizacion;
+
 
     public String getId() {
         return id;

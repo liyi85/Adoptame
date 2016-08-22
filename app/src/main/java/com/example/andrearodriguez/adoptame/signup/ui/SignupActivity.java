@@ -1,7 +1,6 @@
 package com.example.andrearodriguez.adoptame.signup.ui;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -18,17 +17,14 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
+import com.example.andrearodriguez.adoptame.domain.FirebaseAPI;
 import com.example.andrearodriguez.adoptame.entities.Fundacion;
 import com.example.andrearodriguez.adoptame.main.ui.MainActivity;
 import com.example.andrearodriguez.adoptame.R;
 import com.example.andrearodriguez.adoptame.login.LoginPresenter;
 import com.example.andrearodriguez.adoptame.login.ui.LoginView;
-import com.firebase.client.Config;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 import javax.inject.Inject;
 
@@ -77,13 +73,15 @@ public class SignupActivity extends AppCompatActivity implements LoginView {
     RelativeLayout container;
 
     Firebase ref;
-
-
-    private BebeAdoptaApp app;
+    FirebaseAPI firebaseAPI;
 
 
     @Inject
     LoginPresenter loginPresenter;
+
+    Fundacion fundacion;
+    BebeAdoptaApp app;
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -102,9 +100,9 @@ public class SignupActivity extends AppCompatActivity implements LoginView {
         setupInjection();
         loginPresenter.onCreate();
 
-
-        Firebase.setAndroidContext(this);
         ref = new Firebase("https://adoptameapp.firebaseIO.com");
+
+//        Firebase ref = new Firebase(Config.FIREBASE_URL);
 
         txtEmail.addTextChangedListener(new MyTextWatcher(txtEmail));
         txtPassword.addTextChangedListener(new MyTextWatcher(txtPassword));
@@ -115,6 +113,7 @@ public class SignupActivity extends AppCompatActivity implements LoginView {
         txtTelefono.addTextChangedListener(new MyTextWatcher(txtTelefono));
 
     }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -190,9 +189,8 @@ public class SignupActivity extends AppCompatActivity implements LoginView {
         Snackbar.make(container, R.string.signup_registro_completo, Snackbar.LENGTH_SHORT).show();
         loginPresenter.registerNewUser(txtEmail.getText().toString(),
                 txtPassword.getText().toString());
+
     }
-
-
 
 
     private boolean validateFundacion() {
@@ -280,83 +278,119 @@ public class SignupActivity extends AppCompatActivity implements LoginView {
         return true;
     }
 
-    private  void agregandoFirebas(){
-
-        String nombrefundacion =   txtFundacion.getText().toString().trim();
-
-    ref.child("users").child(nombrefundacion).child("nombre fundacion").setValue(nombrefundacion, new Firebase.CompletionListener() {
-
-
-        @Override
-        public void onComplete(FirebaseError firebaseError, Firebase firebase) {
-            if (firebaseError != null) {
-                Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
-            }
-
-        }
-
-
-    });
+    private void agregandoFirebas() {
+        
+        String nombrefundacion = txtFundacion.getText().toString().trim();
+        String email = txtEmail.getText().toString().trim();
         String representante = txtRepresenta.getText().toString().trim();
-
-        ref.child("users").child(nombrefundacion).child("representante").setValue(representante, new Firebase.CompletionListener() {
-            @Override
-            public void onComplete(FirebaseError error, Firebase firebase) {
-                if (error != null) {
-                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
-                }
-
-            }
-        });
+        String nit = txtNit.getText().toString().trim();
+        String telefono = txtTelefono.getText().toString().trim();
         String direccion = txtAddress.getText().toString().trim();
 
-        ref.child("users").child(nombrefundacion).child("direccion").setValue(direccion, new Firebase.CompletionListener() {
-            @Override
-            public void onComplete(FirebaseError error, Firebase firebase) {
-                if (error != null) {
-                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
-                }
+        Fundacion fundacion = new Fundacion();
 
+        fundacion.setNfundacion(nombrefundacion);
+        fundacion.setEmail(email);
+        fundacion.setRepresentante(representante);
+        fundacion.setNit(nit);
+        fundacion.setTelefono(telefono);
+        fundacion.setDireccion(direccion);
+
+        ref.child("Fundaciones").child(nombrefundacion).setValue(fundacion, new Firebase.CompletionListener() {
+
+            @Override
+            public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+                if (firebaseError != null) {
+                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+
+                }
             }
         });
-        String telefono = txtTelefono.getText().toString().trim();
+    }
 
-        ref.child("users").child(nombrefundacion).child("telefono").setValue(telefono, new Firebase.CompletionListener() {
-            @Override
-            public void onComplete(FirebaseError error, Firebase firebase) {
-                if (error != null) {
-                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-
-        String nit = txtNit.getText().toString().trim();
-
-    ref.child("users").child(nombrefundacion).child("nit").setValue(nit, new Firebase.CompletionListener() {
-        @Override
-        public void onComplete(FirebaseError error, Firebase firebase) {
-            if (error != null) {
-                Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
-            }
-
-        }
-    });
-        String correo = txtEmail.getText().toString().trim();
-
-        ref.child("users").child(nombrefundacion).child("correo").setValue(correo, new Firebase.CompletionListener() {
-            @Override
-            public void onComplete(FirebaseError error, Firebase firebase) {
-                if (error != null) {
-                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-
-}
-
-
+//        String nombreUsuarioFundacion = txtFundacion.getText().toString().trim();
+//
+//        ref.child("nombre fundacion").push().getKey();
+//        ref.child("users")
+//                .child(nombreUsuarioFundacion)
+//                .child("nombre fundacion")
+//                .setValue(nombreUsuarioFundacion, new Firebase.CompletionListener() {
+//
+//
+//            @Override
+//            public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+//                if (firebaseError != null) {
+//                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//
+//
+//        });
+//        String representante = txtRepresenta.getText().toString().trim();
+//
+//        ref.child("users")
+//                .child(nombreUsuarioFundacion)
+//                .child("representante")
+//                .setValue(representante, new Firebase.CompletionListener() {
+//            @Override
+//            public void onComplete(FirebaseError error, Firebase firebase) {
+//                if (error != null) {
+//                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//        });
+//        String direccion = txtAddress.getText().toString().trim();
+//
+//        ref.child("users")
+//                .child(nombreUsuarioFundacion)
+//                .child("direccion")
+//                .setValue(direccion, new Firebase.CompletionListener() {
+//            @Override
+//            public void onComplete(FirebaseError error, Firebase firebase) {
+//                if (error != null) {
+//                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//        });
+//        String telefono = txtTelefono.getText().toString().trim();
+//
+//        ref.child("users").child(nombreUsuarioFundacion).child("telefono").setValue(telefono, new Firebase.CompletionListener() {
+//            @Override
+//            public void onComplete(FirebaseError error, Firebase firebase) {
+//                if (error != null) {
+//                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//        });
+//
+//        String nit = txtNit.getText().toString().trim();
+//
+//        ref.child("users").child(nombreUsuarioFundacion).child("nit").setValue(nit, new Firebase.CompletionListener() {
+//            @Override
+//            public void onComplete(FirebaseError error, Firebase firebase) {
+//                if (error != null) {
+//                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//        });
+//        String correo = txtEmail.getText().toString().trim();
+//
+//        ref.child("users").child(nombreUsuarioFundacion).child("correo").setValue(correo, new Firebase.CompletionListener() {
+//            @Override
+//            public void onComplete(FirebaseError error, Firebase firebase) {
+//                if (error != null) {
+//                    Snackbar.make(container, "intente de nuevo", Snackbar.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//        });
+//
+//    }
 
     private static boolean isValidEmail(String email) {
         return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();

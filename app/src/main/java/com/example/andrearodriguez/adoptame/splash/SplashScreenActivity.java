@@ -2,6 +2,7 @@ package com.example.andrearodriguez.adoptame.splash;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
@@ -9,11 +10,16 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.example.andrearodriguez.adoptame.R;
+import com.example.andrearodriguez.adoptame.login.LoginPresenter;
 import com.example.andrearodriguez.adoptame.login.ui.LoginActivity;
+import com.example.andrearodriguez.adoptame.main.ui.MainActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.inject.Inject;
 
 /**
  * Created by andrearodriguez on 7/25/16.
@@ -41,14 +47,17 @@ public class SplashScreenActivity extends Activity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+
+                startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
                 finish();
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
 
             @Override
             public void onAnimationRepeat(Animation animation) {
 
             }
+
+
         });
 
 
@@ -78,4 +87,5 @@ public class SplashScreenActivity extends Activity {
 //        timer.schedule(task, SPLASH_SCREEN_DELAY);
 //    }
     }
+
 }

@@ -6,13 +6,13 @@
         android:toXScale="1.0"
         android:fromYScale="0.1"
         android:toYScale="1.0"
-        android:duration="2000"
+        android:duration="4000"
         android:pivotX="50%"
         android:pivotY="50%" >
         <alpha
             android:fromAlpha="0"
             android:toAlpha="1"
-            android:duration="2000" >
+            android:duration="4000" >
         </alpha>
 
     </scale>

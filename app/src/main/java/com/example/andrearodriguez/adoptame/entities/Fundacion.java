@@ -13,7 +13,7 @@ public class Fundacion {
     private String email;
     private String representante;
     private String nit;
-    private String nombrefundacion;
+    private String nfundacion;
     private String telefono;
     private String direccion;
 
@@ -49,12 +49,12 @@ public class Fundacion {
         this.nit = nit;
     }
 
-    public String getNombrefundacion() {
-        return nombrefundacion;
+    public String getNfundacion() {
+        return nfundacion;
     }
 
-    public void setNombrefundacion(String nombrefundacion) {
-        this.nombrefundacion = nombrefundacion;
+    public void setNfundacion(String nombrefundacion) {
+        this.nfundacion = nombrefundacion;
     }
 
     public String getTelefono() {

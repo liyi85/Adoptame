@@ -15,7 +15,7 @@
     <string name="signup.title">Crear Cuenta</string>
     <string name="VerBebes.title">Ver en adopción</string>
 
-    <string name="loging.button.gotosignup">ir a crear cuenta ></string>
+    <string name="loging.button.gotosignup">crear cuenta ></string>
     <string name="signup.button.signup">crear cuenta</string>
     <string name="loging.message.representante">Representante legal</string>
     <string name="verbebes.menu.action.signoff">Cerrar sesión</string>
@@ -40,5 +40,20 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add.perro.exitoso">agregado exitosamente</string>
+    <string name="add_perro_noexitoso">No pudo ser agregado</string>
+    <string name="add_perro">Agregar Perro</string>
+    <string name="add_perro_aceptar">Aceptar</string>
+    <string name="add_perro_cancelar">cancelar</string>
+    <string name="main_message_picture_source">Selecciona una foto</string>
+    <string name="search">Buscar</string>
+    <string name="fav">Favoritos</string>
+    <string name="verbebes.menu.action.about">Sobre</string>
+
+    <string name="addcontact.messagge.title">Agregar Perro</string>
+    <string name="addcontact.messagge.add">Aceptar</string>
+    <string name="addcontact.messagge.cancel">Cancel</string>
+    <string name="photolist_message_share">compartido</string>
+
 
 </resources>

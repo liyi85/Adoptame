@@ -1,0 +1,95 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/containerAddP">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="110dp"
+            android:id="@+id/imgDog"
+            android:src="@android:drawable/ic_menu_camera"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"/>
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="110dp"
+            android:id="@+id/imgPrueba"
+            android:layout_below="@+id/imgDog"
+            android:layout_marginLeft="20dp"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wrapernameperro"
+            android:layout_toEndOf="@+id/imgDog"
+            android:layout_toRightOf="@+id/imgDog">
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/txtNombre"
+            android:layout_width="@dimen/largo_row_perro"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wrapersexo"
+            android:layout_below="@+id/wrapernameperro"
+            android:layout_toEndOf="@+id/imgDog"
+            android:layout_toRightOf="@+id/imgDog">
+        <EditText
+            android:id="@+id/txtSexo"
+            android:layout_width="@dimen/largo_row_perro"
+            android:layout_height="wrap_content"
+            android:hint="Sexo"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wraperedad"
+            android:layout_below="@+id/wrapersexo"
+            android:layout_toEndOf="@+id/imgDog"
+            android:layout_toRightOf="@+id/imgDog">
+        <EditText
+            android:id="@+id/txtEdad"
+            android:layout_width="@dimen/largo_row_perro"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Edad"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wrapertamano"
+            android:layout_below="@+id/wraperedad"
+            android:layout_toEndOf="@+id/imgDog"
+            android:layout_toRightOf="@+id/imgDog">
+        <EditText
+            android:id="@+id/txtTamano"
+            android:layout_width="@dimen/largo_row_perro"
+            android:layout_height="wrap_content"
+            android:hint="Tamaño"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        </android.support.design.widget.TextInputLayout>
+
+
+    </RelativeLayout>
+
+</FrameLayout>

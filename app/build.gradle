@@ -52,6 +52,7 @@ dependencies {
     compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
 
 
+    compile 'com.google.firebase:firebase-database:9.0.2'
     compile 'com.android.support:support-v4:24.1.1'
-    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile 'com.google.android.gms:play-services-appindexing:9.0.2'
 }

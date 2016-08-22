@@ -16,6 +16,7 @@ import com.example.andrearodriguez.adoptame.main.ui.MainActivity;
 import com.example.andrearodriguez.adoptame.R;
 import com.example.andrearodriguez.adoptame.login.LoginPresenter;
 import com.example.andrearodriguez.adoptame.signup.ui.SignupActivity;
+import com.example.andrearodriguez.adoptame.splash.SplashScreenActivity;
 
 import javax.inject.Inject;
 
@@ -55,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         app = (BebeAdoptaApp)getApplication();
         setupInjection();
         loginPresenter.onCreate();
+        loginPresenter.validateLogin(null, null);
 
     }
 
@@ -118,7 +120,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Override
     public void navigationToMainScreen() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SplashScreenActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
 

@@ -2,14 +2,25 @@ package com.example.andrearodriguez.adoptame;
 
 import android.app.Application;
 
-
+import com.example.andrearodriguez.adoptame.addperro.di.AddPerroComponent;
+import com.example.andrearodriguez.adoptame.addperro.di.AddPerroModule;
+import com.example.andrearodriguez.adoptame.addperro.di.DaggerAddPerroComponent;
+import com.example.andrearodriguez.adoptame.addperro.ui.AddPerroView;
 import com.example.andrearodriguez.adoptame.domain.di.DomainModule;
 import com.example.andrearodriguez.adoptame.libs.base.di.LibsModule;
+
 
 import com.example.andrearodriguez.adoptame.login.di.DaggerLoginComponent;
 import com.example.andrearodriguez.adoptame.login.di.LoginComponent;
 import com.example.andrearodriguez.adoptame.login.di.LoginModule;
 import com.example.andrearodriguez.adoptame.login.ui.LoginView;
+
+
+import com.example.andrearodriguez.adoptame.main.di.DaggerMainComponent;
+import com.example.andrearodriguez.adoptame.main.di.MainComponent;
+
+
+import com.example.andrearodriguez.adoptame.main.di.MainModule;
 
 import com.example.andrearodriguez.adoptame.signup.di.DaggerSignupComponent;
 import com.example.andrearodriguez.adoptame.signup.di.SignupComponent;
@@ -22,7 +33,6 @@ import com.firebase.client.Firebase;
 public class BebeAdoptaApp extends Application {
 
     private final static String EMAIL_KEY = "email";
-    private final static String NIT_KEY = "nit";
     private final static String SHARED_PREFERENCES_NAME = "UsersPrefs";
     private final static String FIREBASE_URL = "https://adoptameapp.firebaseIO.com";
 
@@ -48,9 +58,7 @@ public class BebeAdoptaApp extends Application {
     public String getEmailKey() {
         return EMAIL_KEY;
     }
-    public String getNitKey() {
-        return NIT_KEY;
-    }
+
 
     public String getSharedPreferencesName() {
         return SHARED_PREFERENCES_NAME;
@@ -75,6 +83,24 @@ public class BebeAdoptaApp extends Application {
                 .signupModule(new SignupModule(view))
                 .build();
 
+    }
+    public MainComponent getMainCompoentn (){
+        return DaggerMainComponent
+                .builder()
+                .bebeAdoptaAppModule(bebeAdoptaAppModule)
+                .domainModule(domainModule)
+                .mainModule(new MainModule())
+                .build();
+    }
+
+    public AddPerroComponent getAddPerroComponent (AddPerroView view){
+        return DaggerAddPerroComponent
+                .builder()
+                .bebeAdoptaAppModule(bebeAdoptaAppModule)
+                .domainModule(domainModule)
+                .libsModule(new LibsModule(null))
+                .addPerroModule(new AddPerroModule(view))
+                .build();
     }
 
 }

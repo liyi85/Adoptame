@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:id="@+id/imgDog"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/txtNombre"
+        android:layout_width="@dimen/largo_row_perro"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imgDog"
+        android:layout_toRightOf="@+id/imgDog"
+        android:hint="Nombre"
+        android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/txtSexo"
+        android:layout_width="@dimen/largo_row_perro"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtNombre"
+        android:layout_alignStart="@+id/txtNombre"
+        android:layout_below="@+id/txtNombre"
+        android:hint="Sexo"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/txtEdad"
+        android:layout_width="@dimen/largo_row_perro"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtSexo"
+        android:layout_alignStart="@+id/txtSexo"
+        android:layout_below="@+id/txtSexo"
+        android:hint="Edad"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <TextView
+        android:id="@+id/txtTamano"
+        android:layout_width="@dimen/largo_row_perro"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtEdad"
+        android:layout_alignStart="@+id/txtEdad"
+        android:layout_below="@+id/txtEdad"
+        android:hint="Tamaño"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_share"
+        android:background="@android:color/transparent"
+        android:id="@+id/imgShare"
+        android:layout_below="@+id/txtTamano"
+        android:layout_alignLeft="@+id/txtTamano"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_delete"
+        android:tint="@android:color/darker_gray"
+        android:id="@+id/imgDelete"
+        android:layout_toRightOf="@+id/imgShare"
+        android:layout_toEndOf="@+id/imgShare"
+        android:layout_below="@+id/txtTamano"/>
+
+
+</RelativeLayout>

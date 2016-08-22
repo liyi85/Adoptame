@@ -1,7 +1,6 @@
 package com.example.andrearodriguez.adoptame.domain;
 
 import com.example.andrearodriguez.adoptame.entities.Bebe;
-import com.example.andrearodriguez.adoptame.entities.Fundacion;
 import com.firebase.client.AuthData;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
@@ -82,8 +81,11 @@ public class FirebaseAPI {
         return firebase.push().getKey();
     }
 
+
+
     public void update(Bebe bebe){
         this.firebase.child(bebe.getId()).setValue(bebe);
+
     }
 
     public void remove (Bebe bebe, FirebaActionListenerCallback listenerCallback){
@@ -101,9 +103,11 @@ public class FirebaseAPI {
         return email;
 
     }
+
     public void logout(){
         firebase.unauth();
     }
+
     public void login(String email, String password, final FirebaActionListenerCallback listenerCallback){
         firebase.authWithPassword(email, password, new Firebase.AuthResultHandler() {
             @Override
@@ -130,6 +134,7 @@ public class FirebaseAPI {
                 listenerCallback.onError(firebaseError);
             }
         });
+
     }
     public void checkForSession(FirebaActionListenerCallback listenerCallback){
         if (firebase.getAuth() != null){

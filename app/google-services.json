@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "628281014610",
+    "firebase_url": "https://fundaciones.firebaseio.com",
+    "project_id": "firebase-fundaciones",
+    "storage_bucket": "firebase-fundaciones.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628281014610:android:c2cef8bd84a5d4ae",
+        "android_client_info": {
+          "package_name": "com.example.andrearodriguez.adoptame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628281014610-7cg1rk5u4toughp70t3tefbhgj6tn2ms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUUfVt9m_K4M3fj5js34rLYjPMy8WuHNk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628281014610:android:e52b286cd568cfc5",
+        "android_client_info": {
+          "package_name": "com.example.andrearodriguez.fundaciones"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628281014610-7cg1rk5u4toughp70t3tefbhgj6tn2ms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUUfVt9m_K4M3fj5js34rLYjPMy8WuHNk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -21,7 +21,8 @@ public class FirebaseAPI {
 
 
     public FirebaseAPI(Firebase firebase) {
-        this.firebase = firebase;
+        this.firebase = firebase.child("Perros");
+
     }
 
     public void checkForData(final FirebaActionListenerCallback listenerCallback){

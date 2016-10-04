@@ -1,6 +1,6 @@
 package com.example.andrearodriguez.adoptame.domain;
 
-import com.example.andrearodriguez.fundaciones.entities.Fundacion;
+import com.example.andrearodriguez.adoptame.entities.Fundacion;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -20,7 +20,7 @@ public class FirebaseFundacionesAPI {
         this.firebase = firebase.child("Fundaciones");
     }
 
-    public void checkForData(final FirebaseActionListenerCallback listenerCallback){
+    public void checkForData(final FirebaActionListenerCallback listenerCallback){
         firebase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -62,7 +62,7 @@ public class FirebaseFundacionesAPI {
 
                 @Override
                 public void onCancelled(FirebaseError firebaseError) {
-                    listenerCallback.onCancell(firebaseError);
+                    listenerCallback.onCancelled(firebaseError);
                 }
             };
             firebase.addChildEventListener(fundacionEventListener);
@@ -73,7 +73,8 @@ public class FirebaseFundacionesAPI {
             firebase.removeEventListener(fundacionEventListener);
         }
     }
-    public String create(){
+    public String create()
+    {
         return firebase.push().getKey();
     }
 

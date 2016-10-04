@@ -61,7 +61,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loging.button.gotosignup"
+            android:text="@string/signup.button.signup"
             android:id="@+id/btnSignUp" />
     </LinearLayout>
     <ProgressBar

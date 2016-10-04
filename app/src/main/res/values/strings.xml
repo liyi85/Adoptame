@@ -54,6 +54,7 @@
     <string name="addcontact.messagge.add">Aceptar</string>
     <string name="addcontact.messagge.cancel">Cancel</string>
     <string name="photolist_message_share">compartido</string>
+    <string name="perroClick">perro click</string>
 
 
 </resources>

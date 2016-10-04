@@ -12,8 +12,7 @@ import android.widget.ImageView;
 
 import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.example.andrearodriguez.adoptame.R;
-import com.example.andrearodriguez.adoptame.login.LoginPresenter;
-import com.example.andrearodriguez.adoptame.login.ui.LoginActivity;
+
 import com.example.andrearodriguez.adoptame.main.ui.MainActivity;
 
 import java.util.Timer;

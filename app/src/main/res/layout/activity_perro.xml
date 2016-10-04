@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".perrolist.PerroListFragment">
+    tools:context=".perrolist.ui.PerroListActivity"
+    android:background="#c0c0c0c0">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -32,18 +33,16 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerViewPerro"
         android:layout_width="match_parent"
-        android:layout_height= "wrap_content"
+        android:layout_height= "match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_margin="@dimen/activity_horizontal_margin" />
+         />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="@dimen/fab_margin"
-        android:tint="@android:color/white"
-        app:backgroundTint="@color/colorAccent"
-        android:src="@android:drawable/ic_input_add"/>
+        android:id="@+id/progresBarAddFundation"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
 
 </android.support.design.widget.CoordinatorLayout>

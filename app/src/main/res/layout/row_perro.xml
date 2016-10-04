@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="1dp"
+    >
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:cardView="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv"
+        cardView:cardCornerRadius="4dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        cardView:cardElevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            >
 
     <ImageView
         android:layout_width="140dp"
         android:layout_height="110dp"
         android:id="@+id/imgDog"
+
         android:src="@mipmap/ic_launcher"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="8dp"/>
 
     <TextView
         android:layout_marginTop="10dp"
         android:id="@+id/txtNombre"
         android:layout_width="@dimen/largo_row_perro"
+
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/imgDog"
         android:layout_toRightOf="@+id/imgDog"
         android:hint="Nombre"
         android:textColor="@android:color/black"
@@ -67,12 +88,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:src="@android:drawable/ic_delete"
-        android:tint="@android:color/darker_gray"
+        android:src="@android:drawable/ic_menu_delete"
         android:id="@+id/imgDelete"
         android:layout_toRightOf="@+id/imgShare"
         android:layout_toEndOf="@+id/imgShare"
         android:layout_below="@+id/txtTamano"/>
 
+        </RelativeLayout>
 
-</RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

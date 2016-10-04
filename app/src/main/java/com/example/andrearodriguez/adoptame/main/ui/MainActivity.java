@@ -3,20 +3,20 @@ package com.example.andrearodriguez.adoptame.main.ui;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TableRow;
 
 import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.example.andrearodriguez.adoptame.R;
-import com.example.andrearodriguez.adoptame.login.ui.LoginActivity;
+import com.example.andrearodriguez.adoptame.fundacioneslist.ui.FundationListActivity;
 import com.example.andrearodriguez.adoptame.main.MainPresenter;
 import com.example.andrearodriguez.adoptame.perrolist.ui.PerroListActivity;
-
 
 import javax.inject.Inject;
 
@@ -46,6 +46,21 @@ public class MainActivity extends AppCompatActivity {
     MainPresenter presenter;
     @Inject
     SharedPreferences sharedPreferences;
+
+    @Bind(R.id.appbar)
+    AppBarLayout appbar;
+    @Bind(R.id.txtarriba)
+    TableRow txtarriba;
+    @Bind(R.id.arriba)
+    TableRow arriba;
+    @Bind(R.id.txtabajo)
+    TableRow txtabajo;
+    @Bind(R.id.abajo)
+    TableRow abajo;
+    @Bind(R.id.imgAbout)
+    Button imgAbout;
+    @Bind(R.id.abajo2)
+    TableRow abajo2;
 
     private BebeAdoptaApp app;
 
@@ -83,27 +98,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == R.id.action_logout){
-            logout();
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
-    private void logout() {
-        presenter.logout();
-        sharedPreferences.edit().clear().commit();
-        Intent intent = new Intent(this, LoginActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-                | Intent.FLAG_ACTIVITY_NEW_TASK
-                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
-
-    @OnClick({R.id.imgPerro, R.id.imgCat, R.id.imgOtro, R.id.imgEncontrar})
+    @OnClick({R.id.imgPerro, R.id.imgCat, R.id.imgOtro, R.id.imgEncontrar, R.id.imgFundation })
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.imgPerro:
@@ -115,6 +112,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.imgOtro:
                 break;
             case R.id.imgEncontrar:
+                break;
+            case R.id.imgFundation:
+                Intent intentF = new Intent(this, FundationListActivity.class);
+                startActivity(intentF);
+                break;
+            case R.id.imgAbout:
                 break;
         }
     }

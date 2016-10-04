@@ -17,7 +17,7 @@ public class Bebe {
 
     private String url;
     private String email;
-    private String name;
+    private String nombre;
     private String edad;
     private String tamaño;
     private String sexo;
@@ -58,13 +58,6 @@ public class Bebe {
         this.email = email;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getEdad() {
         return edad;
@@ -112,5 +105,13 @@ public class Bebe {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }

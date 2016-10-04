@@ -26,15 +26,6 @@
             android:padding="2dp"
             >
 
-    <ImageView
-        android:layout_width="140dp"
-        android:layout_height="110dp"
-        android:id="@+id/imgDog"
-
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="8dp"/>
 
     <TextView
         android:layout_marginTop="10dp"
@@ -42,57 +33,46 @@
         android:layout_width="@dimen/largo_row_perro"
 
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/imgDog"
         android:hint="Nombre"
         android:textColor="@android:color/black"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/txtSexo"
+        android:id="@+id/txtDireccion"
         android:layout_width="@dimen/largo_row_perro"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/txtNombre"
         android:layout_alignStart="@+id/txtNombre"
         android:layout_below="@+id/txtNombre"
-        android:hint="Sexo"
+        android:hint="Dirección"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/txtEdad"
+        android:id="@+id/txtCorreo"
         android:layout_width="@dimen/largo_row_perro"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtSexo"
-        android:layout_alignStart="@+id/txtSexo"
-        android:layout_below="@+id/txtSexo"
-        android:hint="Edad"
+        android:layout_alignLeft="@+id/txtDireccion"
+        android:layout_alignStart="@+id/txtDireccion"
+        android:layout_below="@+id/txtDireccion"
+        android:hint="Correo"
         android:textAppearance="?android:attr/textAppearanceSmall" />
     <TextView
-        android:id="@+id/txtTamano"
+        android:id="@+id/txtTelefono"
         android:layout_width="@dimen/largo_row_perro"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtEdad"
-        android:layout_alignStart="@+id/txtEdad"
-        android:layout_below="@+id/txtEdad"
-        android:hint="Tamaño"
+        android:layout_alignLeft="@+id/txtCorreo"
+        android:layout_alignStart="@+id/txtCorreo"
+        android:layout_below="@+id/txtCorreo"
+        android:hint="Telefono"
         android:textAppearance="?android:attr/textAppearanceSmall" />
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_menu_share"
-        android:background="@android:color/transparent"
-        android:id="@+id/imgShare"
-        android:layout_below="@+id/txtTamano"
-        android:layout_alignLeft="@+id/txtTamano"/>
+        android:src="@android:drawable/stat_sys_vp_phone_call"
+        android:id="@+id/imgTelefono"
+        android:layout_toRightOf="@+id/txtTelefono"
+        android:layout_below="@+id/txtNombre"/>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:src="@android:drawable/ic_menu_delete"
-        android:id="@+id/imgDelete"
-        android:layout_toRightOf="@+id/imgShare"
-        android:layout_toEndOf="@+id/imgShare"
-        android:layout_below="@+id/txtTamano"/>
 
         </RelativeLayout>
 

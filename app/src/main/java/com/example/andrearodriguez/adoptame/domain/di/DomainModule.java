@@ -1,6 +1,7 @@
 package com.example.andrearodriguez.adoptame.domain.di;
 
 import com.example.andrearodriguez.adoptame.domain.FirebaseAPI;
+import com.example.andrearodriguez.adoptame.domain.FirebaseFundacionesAPI;
 import com.firebase.client.Firebase;
 
 import javax.inject.Singleton;
@@ -17,6 +18,12 @@ public class DomainModule {
 
     public DomainModule(String firebaseURL) {
         this.firebaseURL = firebaseURL;
+    }
+
+    @Provides
+    @Singleton
+    FirebaseFundacionesAPI providesFirebaseFundacionesAPI (Firebase firebase){
+        return new FirebaseFundacionesAPI(firebase);
     }
 
     @Provides

@@ -1,19 +1,21 @@
 package com.example.andrearodriguez.adoptame.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Created by andrearodriguez on 7/26/16.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Fundacion {
 
     @JsonIgnore
     private String id;
 
+
     private String email;
     private String representante;
-    private String nit;
-    private String nfundacion;
+    private String nombreFundacion;
     private String telefono;
     private String direccion;
 
@@ -41,20 +43,12 @@ public class Fundacion {
         this.representante = representante;
     }
 
-    public String getNit() {
-        return nit;
+    public String getNombreFundacion() {
+        return nombreFundacion;
     }
 
-    public void setNit(String nit) {
-        this.nit = nit;
-    }
-
-    public String getNfundacion() {
-        return nfundacion;
-    }
-
-    public void setNfundacion(String nombrefundacion) {
-        this.nfundacion = nombrefundacion;
+    public void setNombreFundacion(String nombreFundacion) {
+        this.nombreFundacion = nombreFundacion;
     }
 
     public String getTelefono() {

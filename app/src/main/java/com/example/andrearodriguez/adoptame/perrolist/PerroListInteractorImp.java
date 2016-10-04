@@ -5,9 +5,25 @@ import com.example.andrearodriguez.adoptame.entities.Bebe;
 /**
  * Created by andrearodriguez on 8/18/16.
  */
-public interface PerroListInteractorImp {
-    void subscribe();
-    void unsubscribe();
+public class PerroListInteractorImp implements PerroListInteractor{
+    private PerroListRepository repository;
 
-    void removePerro(Bebe bebe);
+    public PerroListInteractorImp(PerroListRepository repository) {
+        this.repository = repository;
+    }
+
+    @Override
+    public void subscribe() {
+        repository.subscribe();
+    }
+
+    @Override
+    public void unsubscribe() {
+        repository.unsubscribe();
+    }
+
+    @Override
+    public void removePerro(Bebe bebe) {
+        repository.removePerro(bebe);
+    }
 }

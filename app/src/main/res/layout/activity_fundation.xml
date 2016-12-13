@@ -7,8 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".fundationlist.ui.FundationListActivity"
-    android:background="#c0c0c0c0">
+    tools:context=".fundacioneslist.ui.FundationListActivity"
+    android:background="#E2E2E2">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

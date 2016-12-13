@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".main.ui.MainActivity"
+    android:background="#E2E2E2"
     android:verticalScrollbarPosition="defaultPosition"
     >
 
@@ -65,7 +66,10 @@
             android:layout_gravity="center"
             android:padding="1dp"
             android:layout_margin="5dp"
-            android:background="@drawable/perro3" />
+            android:background="@drawable/perro3"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -74,7 +78,10 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:background="@drawable/gato"/>
+            android:background="@drawable/gato"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
     </TableRow>
 
@@ -114,7 +121,9 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:background="@drawable/raton"
-            />
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -124,7 +133,9 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:background="@drawable/buscando"
-            />
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
     </TableRow>
 
@@ -142,7 +153,10 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:text="Lista de Fundaciones"
+            android:background="@drawable/btnf"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             />
 
         <Button
@@ -152,7 +166,10 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:background="@drawable/common_google_signin_btn_icon_dark_pressed"
+            android:background="@drawable/eventos2"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             />
 
     </TableRow>

@@ -26,4 +26,22 @@ public class PerroListInteractorImp implements PerroListInteractor{
     public void removePerro(Bebe bebe) {
         repository.removePerro(bebe);
     }
+
+    @Override
+    public void excecute(Bebe bebe) {
+        repository.updatePerro(bebe);
+
+    }
+
+    @Override
+    public void searchFav() {
+        repository.getFavoritesBebe();
+    }
+
+    @Override
+    public void searchAll() {
+        repository.getAll();
+    }
+
+
 }

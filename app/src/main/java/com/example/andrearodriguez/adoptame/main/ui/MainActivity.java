@@ -14,6 +14,7 @@ import android.widget.TableRow;
 
 import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.example.andrearodriguez.adoptame.R;
+import com.example.andrearodriguez.adoptame.entities.Fundacion;
 import com.example.andrearodriguez.adoptame.fundacioneslist.ui.FundationListActivity;
 import com.example.andrearodriguez.adoptame.main.MainPresenter;
 import com.example.andrearodriguez.adoptame.perrolist.ui.PerroListActivity;
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
     private BebeAdoptaApp app;
 
+    Fundacion fundacion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,9 +79,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupNavigation() {
+
+        //forzar y cargar icono en el action bar
         setSupportActionBar(toolbar);
-        String email = sharedPreferences.getString(app.getEmailKey(), getString(R.string.app_name));
-        getSupportActionBar().setTitle(email);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+//        String email = sharedPreferences.getString(app.getEmailKey(), getString(R.string.app_name));
+//        getSupportActionBar().setTitle(email);
 
     }
 

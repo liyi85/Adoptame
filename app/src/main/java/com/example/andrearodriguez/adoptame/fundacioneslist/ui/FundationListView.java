@@ -13,4 +13,6 @@ public interface FundationListView {
 
     void addFundation(Fundacion fundacion);
     void onFundationError(String error);
+
+
 }

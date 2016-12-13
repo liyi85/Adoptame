@@ -79,9 +79,34 @@ public class PerroListPresenterImp implements PerroListPresenter{
                     view.addPerro(event.getBebe());
                 } else if (event.getType() == PerroListEvent.DELETE_EVENT) {
                     view.removePerro(event.getBebe());
+                }else if (event.getType() == PerroListEvent.UPDATE_EVENT){
+                    view.onPerroUpload();
                 }
             }
         }
 
     }
+
+    @Override
+    public void toggleFavorite(Bebe bebe) {
+        boolean fav = bebe.getFavorite();
+        bebe.setFavorite(!fav);
+        interactor.excecute(bebe);
+    }
+
+    @Override
+    public void showAll() {
+        interactor.searchAll();
+    }
+
+    @Override
+    public void showFavs() {
+        interactor.searchFav();
+    }
+
+    @Override
+    public PerroListView getView() {
+        return this.view;
+    }
+
 }

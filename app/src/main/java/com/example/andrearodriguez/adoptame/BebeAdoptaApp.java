@@ -3,7 +3,6 @@ package com.example.andrearodriguez.adoptame;
 import android.app.Application;
 
 import com.example.andrearodriguez.adoptame.domain.di.DomainModule;
-
 import com.example.andrearodriguez.adoptame.fundacioneslist.di.DaggerFundationListComponent;
 import com.example.andrearodriguez.adoptame.fundacioneslist.di.FundationListComponent;
 import com.example.andrearodriguez.adoptame.fundacioneslist.di.FundationListModule;
@@ -11,12 +10,9 @@ import com.example.andrearodriguez.adoptame.fundacioneslist.ui.FundationListActi
 import com.example.andrearodriguez.adoptame.fundacioneslist.ui.FundationListView;
 import com.example.andrearodriguez.adoptame.fundacioneslist.ui.adapters.OnItemClickListenerF;
 import com.example.andrearodriguez.adoptame.libs.base.di.LibsModule;
-
-
 import com.example.andrearodriguez.adoptame.main.di.DaggerMainComponent;
 import com.example.andrearodriguez.adoptame.main.di.MainComponent;
 import com.example.andrearodriguez.adoptame.main.di.MainModule;
-
 import com.example.andrearodriguez.adoptame.perrolist.di.DaggerPerroLisComponent;
 import com.example.andrearodriguez.adoptame.perrolist.di.PerroLisComponent;
 import com.example.andrearodriguez.adoptame.perrolist.di.PerroListModule;
@@ -24,6 +20,7 @@ import com.example.andrearodriguez.adoptame.perrolist.ui.PerroListActivity;
 import com.example.andrearodriguez.adoptame.perrolist.ui.PerroListView;
 import com.example.andrearodriguez.adoptame.perrolist.ui.adapter.OnItemClickListener;
 import com.firebase.client.Firebase;
+import com.raizlabs.android.dbflow.config.FlowManager;
 
 
 /**
@@ -47,7 +44,24 @@ public class BebeAdoptaApp extends Application {
         super.onCreate();
         initFirebase();
         initModules();
+        initDB();
 
+    }
+
+    private void initDB() {
+        FlowManager.init(this);
+    }
+
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        DBTearDown();
+
+    }
+
+    private void DBTearDown() {
+        FlowManager.destroy();
     }
 
     private void initModules() {

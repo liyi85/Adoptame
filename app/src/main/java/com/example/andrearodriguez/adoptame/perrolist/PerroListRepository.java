@@ -10,5 +10,8 @@ public interface PerroListRepository {
     void unsubscribe();
 
     void removePerro(Bebe bebe);
+    void updatePerro(Bebe bebe);
 
+    void getFavoritesBebe();
+    void getAll();
 }

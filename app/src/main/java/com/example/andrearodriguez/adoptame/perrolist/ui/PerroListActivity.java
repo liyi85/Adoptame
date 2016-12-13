@@ -9,29 +9,33 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.example.andrearodriguez.adoptame.R;
 import com.example.andrearodriguez.adoptame.entities.Bebe;
+import com.example.andrearodriguez.adoptame.main.ui.MainActivity;
 import com.example.andrearodriguez.adoptame.perrolist.PerroListPresenter;
 import com.example.andrearodriguez.adoptame.perrolist.ui.adapter.OnItemClickListener;
 import com.example.andrearodriguez.adoptame.perrolist.ui.adapter.PerroListAdapter;
 
 import java.io.ByteArrayOutputStream;
+import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class PerroListActivity extends AppCompatActivity implements PerroListView, OnItemClickListener {
 
@@ -68,6 +72,7 @@ public class PerroListActivity extends AppCompatActivity implements PerroListVie
 
     private void setupRecyclerView() {
         recyclerViewPerro.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewPerro.setItemAnimator(new DefaultItemAnimator());
         recyclerViewPerro.setAdapter(adapter);
     }
 
@@ -92,10 +97,25 @@ public class PerroListActivity extends AppCompatActivity implements PerroListVie
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_fav, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_show_all){
+            presenter.showAll();
+        }else if (id == R.id.action_show_fav){
+            presenter.showFavs();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void navigateToMainScreen() {
+        startActivity(new Intent(this, MainActivity.class));
+    }
 
     @Override
     public void showList() {
@@ -133,13 +153,15 @@ public class PerroListActivity extends AppCompatActivity implements PerroListVie
         Snackbar.make(mainContent, error, Snackbar.LENGTH_SHORT).show();
     }
 
+
     @Override
     public void onPerroClick(Bebe bebe) {
-        Snackbar.make(mainContent, R.string.perroClick, Snackbar.LENGTH_SHORT).show();
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(bebe.getUrl()));
+        startActivity(intent);
     }
 
     @Override
-    public void onShareclick(Bebe bebe, ImageView img) {
+    public void onShareclick(Bebe bebe, ImageView img, TextView sexo, TextView edad) {
         Bitmap bitmap = ((GlideBitmapDrawable) img.getDrawable()).getBitmap();
         Intent share = new Intent(Intent.ACTION_SEND);
         share.setType("image/jpeg");
@@ -153,8 +175,25 @@ public class PerroListActivity extends AppCompatActivity implements PerroListVie
         startActivity(Intent.createChooser(share, getString(R.string.photolist_message_share)));
     }
 
+
     @Override
     public void onDeleteClick(Bebe bebe) {
         presenter.removePerro(bebe);
     }
+
+    @Override
+    public void onPerroUpload() {
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void setBebes(List<Bebe> data) {
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onFavClick(Bebe bebe) {
+        presenter.toggleFavorite(bebe);
+    }
+
 }

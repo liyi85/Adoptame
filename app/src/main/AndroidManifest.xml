@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <!-- <uses-feature -->
     <!-- android:name="android.hardware.camera" -->
@@ -30,21 +31,20 @@
             android:name="CLOUDINARY_URL"
             android:value="@string/CLOUDINARY_URL" />
 
-
         <activity
             android:name=".splash.SplashScreenActivity"
             android:label="@string/app_name"
-            android:noHistory="true">>
+            android:noHistory="true">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".main.ui.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -57,7 +57,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".main.ui.MainActivity" />
         </activity>
-
         <activity
             android:name=".fundacioneslist.ui.FundationListActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -65,7 +64,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".main.ui.MainActivity" />
         </activity>
-
     </application>
 
 </manifest>

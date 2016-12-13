@@ -10,4 +10,11 @@ public interface PerroListInteractor {
     void unsubscribe();
 
     void removePerro(Bebe bebe);
+
+    void excecute(Bebe bebe);
+    void searchFav();
+    void searchAll();
+
+
+
 }

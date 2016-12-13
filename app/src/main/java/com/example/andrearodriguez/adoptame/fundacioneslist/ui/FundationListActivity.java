@@ -1,5 +1,7 @@
 package com.example.andrearodriguez.adoptame.fundacioneslist.ui;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -45,6 +47,8 @@ public class FundationListActivity extends AppCompatActivity implements Fundatio
     @Inject
     FundationListPresenter presenter;
 
+    private final int PHONE_CALL_CODE = 100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +88,6 @@ public class FundationListActivity extends AppCompatActivity implements Fundatio
     }
 
 
-
     @Override
     public void showList() {
         recyclerViewFundation.setVisibility(View.VISIBLE);
@@ -115,8 +118,110 @@ public class FundationListActivity extends AppCompatActivity implements Fundatio
         Snackbar.make(mainContent, error, Snackbar.LENGTH_SHORT).show();
     }
 
+
     @Override
-    public void onFundationClick(Fundacion fundacion) {
-        Snackbar.make(mainContent, R.string.perroClick, Snackbar.LENGTH_SHORT).show();
+    public void onFundationEmail(Fundacion fundacion) {
+        String email = fundacion.getEmail().toString();
+        if (email != null) {
+            Intent intenEmail = new Intent(Intent.ACTION_SEND);
+            intenEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+            intenEmail.setType("message/rfc822");
+            startActivity(Intent.createChooser(intenEmail, "Elige su cliente de Email :"));
+        }
+    }
+
+
+    @Override
+    public void onFundationCall(Fundacion fundacion) {
+        String phoneNumber = fundacion.getTelefono().toString();
+
+        Intent intentPhone = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
+        startActivity(intentPhone);
+
+//        if (phoneNumber != null) {
+//            //comprobar version del telefono vs del programa
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//
+//                //verificar si ha aceptado, a denegado o nunca se le ha preguntado
+//                if(CheckPermission(Manifest.permission.CALL_PHONE)){
+//                    //ha aceptado
+//                    Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
+//                    if(ActivityCompat.checkSelfPermission(FundationListActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED);
+//                    startActivity(i);
+//                }
+//
+//                else{
+//                    //ha denegado o es la primera vez que se le pregunta
+//                    if(!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)){
+//                        //no se le pregunta aun
+//                        requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, PHONE_CALL_CODE);
+//                    }else{
+//                        //Ha denegado
+//                        Toast.makeText(FundationListActivity.this, "Por favor autorice el acceso de la aplicación al teléfono", Toast.LENGTH_LONG).show();
+//                        Intent i = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+//                        i.addCategory(Intent.CATEGORY_DEFAULT);
+//                        i.setData(Uri.parse("package:" + getPackageName()));
+//                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+//                        i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+//                        startActivity(i);
+//                    }
+//                }
+//
+//            } else {
+//                OlderVersions(phoneNumber);
+//            }
+//
+//        }
+//    }
+//
+//    private void OlderVersions(String phoneNumber) {
+//        Intent intentCall = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
+//        if (CheckPermission(Manifest.permission.CALL_PHONE)) {
+//            startActivity(intentCall);
+//        } else {
+//            Toast.makeText(FundationListActivity.this, "You decline access", Toast.LENGTH_SHORT).show();
+//        }
+//
+//    }
+//
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults, Fundacion fundacion) {
+//        //Estamos en el caso del telefono
+//        switch (requestCode) {
+//
+//            case PHONE_CALL_CODE:
+//
+//                String permission = permissions[0];
+//                int result = grantResults[0];
+//
+//                if (permission.equals(Manifest.permission.CALL_PHONE)) {
+//                    //comprobar si fue aceptado o negado el permiso
+//                    if (result == PackageManager.PERMISSION_GRANTED) {
+//                        //acepto el permiso
+//                        String phoneNumber = fundacion.getTelefono().toString();
+//                        Intent intentCall = new Intent(Intent.ACTION_CALL, Uri.parse("tel" + phoneNumber));
+//                        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//                            return;
+//                        }
+//                        startActivity(intentCall);
+//                    }else{
+//                        //no dio permiso
+//                            Toast.makeText(FundationListActivity.this, "You declined the access", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//                break;
+//
+//            default:
+//                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//                break;
+//
+//        }
+//    }
+//
+//    private boolean CheckPermission(String permission){
+//        int result = this.checkCallingOrSelfPermission(permission);
+//        return result == PackageManager.PERMISSION_GRANTED;
+//    }
     }
 }

@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".perrolist.ui.PerroListActivity"
-    android:background="#c0c0c0c0">
+    android:background="#E2E2E2">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

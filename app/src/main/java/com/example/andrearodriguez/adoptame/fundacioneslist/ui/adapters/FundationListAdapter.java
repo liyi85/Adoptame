@@ -70,8 +70,11 @@ public class FundationListAdapter extends RecyclerView.Adapter<FundationListAdap
         TextView txtTelefono;
         @Bind(R.id.imgTelefono)
         ImageButton imgTelefono;
+        @Bind(R.id.imgEmail)
+        ImageButton imgEmail;
         @Bind(R.id.cv)
         CardView cv;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -81,7 +84,14 @@ public class FundationListAdapter extends RecyclerView.Adapter<FundationListAdap
             imgTelefono.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    clickListener.onFundationClick(fundacion);
+                    clickListener.onFundationCall(fundacion);
+                }
+            });
+
+            imgEmail.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clickListener.onFundationEmail(fundacion);
                 }
             });
 

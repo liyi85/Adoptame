@@ -4,11 +4,13 @@ import com.example.andrearodriguez.adoptame.domain.FirebaActionListenerCallback;
 import com.example.andrearodriguez.adoptame.domain.FirebaseAPI;
 import com.example.andrearodriguez.adoptame.domain.FirebaseEventListenerCallback;
 import com.example.andrearodriguez.adoptame.entities.Bebe;
-import com.example.andrearodriguez.adoptame.libs.ClaudinaryImageStorage;
 import com.example.andrearodriguez.adoptame.libs.base.EventBus;
 import com.example.andrearodriguez.adoptame.perrolist.events.PerroListEvent;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.FirebaseError;
+
+import java.util.List;
+
 
 /**
  * Created by andrearodriguez on 8/18/16.
@@ -90,6 +92,23 @@ public class PerroListRepositoryImp implements PerroListRepository{
 
         }
 
+    @Override
+    public void updatePerro(Bebe bebe) {
+        bebe.update();
+        post();
+    }
+
+    @Override
+    public void getFavoritesBebe() {
+
+    }
+
+    @Override
+    public void getAll() {
+
+    }
+
+
     private void post(int type, Bebe bebe) {
         post(type, bebe, null);
     }
@@ -103,6 +122,18 @@ public class PerroListRepositoryImp implements PerroListRepository{
         event.setType(type);
         event.setError(error);
         event.setBebe(bebe);
+        eventBus.post(event);
+    }
+
+    private void post () {
+        post(PerroListEvent.UPDATE_EVENT, null, null);
+
+    }
+
+    private void post(int type, List<Bebe> bebes){
+        PerroListEvent event = new PerroListEvent();
+        event.setBebeList(bebes);
+        event.setType(type);
         eventBus.post(event);
     }
 }

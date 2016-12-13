@@ -27,11 +27,15 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
     private ImageLoader imageLoader;
     private OnItemClickListener clickListener;
 
+
     public PerroListAdapter(List<Bebe> perroList, ImageLoader imageLoader, OnItemClickListener clickListener) {
         this.perroList = perroList;
         this.imageLoader = imageLoader;
         this.clickListener = clickListener;
+
     }
+
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -43,6 +47,7 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         Bebe currenBebe = perroList.get(position);
+
         imageLoader.load(holder.imgDog, currenBebe.getUrl());
 
         holder.txtNombre.setText(currenBebe.getNombre());
@@ -50,13 +55,20 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
         holder.txtSexo.setText(currenBebe.getSexo());
         holder.txtEdad.setText(currenBebe.getEdad());
 
-        holder.setOnItemClickListener(currenBebe, clickListener);
-        if (currenBebe.isPublishedByMe()){
-            holder.imgDelete.setVisibility(View.VISIBLE);
-        } else {
-            holder.imgDelete.setVisibility(View.GONE);
+
+        holder.imgFavorito.setTag(currenBebe.getFavorite());
+        if (currenBebe.getFavorite()){
+            holder.imgFavorito.setImageResource(android.R.drawable.btn_star_big_on);
+
+        }else{
+            holder.imgFavorito.setImageResource(android.R.drawable.btn_star_big_off);
+
         }
+
+        holder.setOnItemClickListener(currenBebe, clickListener);
+
     }
+
 
     public void addPerro(Bebe bebe) {
         perroList.add(0, bebe);
@@ -73,6 +85,7 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
         return perroList.size();
     }
 
+
     static class ViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.imgDog)
         ImageView imgDog;
@@ -86,33 +99,35 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
         TextView txtTamano;
         @Bind(R.id.imgShare)
         ImageButton imgShare;
-        @Bind(R.id.imgDelete)
-        ImageButton imgDelete;
+        @Bind(R.id.imgFavorito)
+        ImageButton imgFavorito;
+
+
 
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
 
-        public void setOnItemClickListener(final Bebe bebe, final OnItemClickListener clickListener) {
+        public void setOnItemClickListener(final Bebe currenBebe, final OnItemClickListener clickListener) {
             imgDog.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    clickListener.onPerroClick(bebe);
+                    clickListener.onPerroClick(currenBebe);
                 }
             });
 
             imgShare.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    clickListener.onShareclick(bebe, imgDog);
+                    clickListener.onShareclick(currenBebe, imgDog, txtSexo, txtEdad);
                 }
             });
 
-            imgDelete.setOnClickListener(new View.OnClickListener() {
+            imgFavorito.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
-                    clickListener.onDeleteClick(bebe);
+                public void onClick(View view) {
+                    clickListener.onFavClick(currenBebe);
                 }
             });
         }

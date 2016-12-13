@@ -1,19 +1,34 @@
 package com.example.andrearodriguez.adoptame.entities;
 
-import android.media.Image;
 
+import com.example.andrearodriguez.adoptame.db.BebesDatabase;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.gson.annotations.SerializedName;
+import com.raizlabs.android.dbflow.annotation.Column;
+import com.raizlabs.android.dbflow.annotation.PrimaryKey;
+import com.raizlabs.android.dbflow.annotation.Table;
+import com.raizlabs.android.dbflow.structure.BaseModel;
+
 
 /**
  * Created by andrearodriguez on 7/24/16.
  */
-public class Bebe {
+@Table(database = BebesDatabase.class)
+public class Bebe extends BaseModel{
 
     @JsonIgnore
+    @SerializedName("bebe_id")
+    @PrimaryKey
+    @Column
     private String id;
 
     @JsonIgnore
     private boolean publishedByMe;
+
+    @JsonIgnore
+    @SerializedName("bebe_fav")
+    @Column
+    private boolean favorite;
 
     private String url;
     private String email;
@@ -21,10 +36,10 @@ public class Bebe {
     private String edad;
     private String tamaño;
     private String sexo;
+
     private String fundacion;
     private String vacunacion;
     private String esterilizacion;
-
 
     public String getId() {
         return id;
@@ -40,6 +55,14 @@ public class Bebe {
 
     public void setPublishedByMe(boolean publishedByMe) {
         this.publishedByMe = publishedByMe;
+    }
+
+    public boolean getFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
     }
 
     public String getUrl() {
@@ -58,6 +81,13 @@ public class Bebe {
         this.email = email;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public String getEdad() {
         return edad;
@@ -73,6 +103,14 @@ public class Bebe {
 
     public void setTamaño(String tamaño) {
         this.tamaño = tamaño;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     public String getFundacion() {
@@ -99,19 +137,14 @@ public class Bebe {
         this.esterilizacion = esterilizacion;
     }
 
-    public String getSexo() {
-        return sexo;
-    }
+    @Override
+    public boolean equals(Object obj) {
+        boolean equal = false;
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (obj instanceof Bebe){
+            Bebe bebe = (Bebe)obj;
+            equal = this.id.equals(bebe.getId());
+        }
+        return equal;
     }
 }

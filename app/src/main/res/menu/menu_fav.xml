@@ -5,7 +5,7 @@
     tools:context = ".perrosList.ui.PerroListFragment">
 
     <item
-        android:id="@+id/action_show_fav"
+        android:id="@+id/menu_favorites"
         android:title="@string/fav"
         android:icon="@android:drawable/btn_star_big_on"
         app:showAsAction="always" />

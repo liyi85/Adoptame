@@ -49,9 +49,9 @@ public class PerroListRepositoryImp implements PerroListRepository{
                 Bebe bebe = dataSnapshot.getValue(Bebe.class);
                 String email = firebaseAPI.getAuthEmail();
                 bebe.setId(dataSnapshot.getKey());
-
-                boolean publishedByMy = (bebe.getEmail()).equals(email);
-                bebe.setPublishedByMe(publishedByMy);
+//
+//                boolean publishedByMy = (bebe.getEmail()).equals(email);
+//                bebe.setPublishedByMe(publishedByMy);
                 post(PerroListEvent.READ_EVENT, bebe);
             }
 

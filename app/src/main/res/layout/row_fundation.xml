@@ -14,83 +14,95 @@
         cardView:cardElevation="5dp"
         android:layout_margin="5dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="2dp"
-            >
+            android:layout_weight="0.60"
+            android:padding="2dp">
 
 
-    <TextView
-        android:layout_marginTop="10dp"
-        android:id="@+id/txtNombre"
-        android:layout_width="@dimen/largo_row_perro"
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtNombre"
+                android:layout_width="@dimen/largo_row_perro"
 
-        android:layout_height="wrap_content"
-        android:hint="Nombre"
-        android:textColor="@android:color/black"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:layout_height="wrap_content"
+                android:hint="Nombre"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/txtDireccion"
-        android:layout_width="@dimen/largo_row_perro"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtNombre"
-        android:layout_alignStart="@+id/txtNombre"
-        android:layout_below="@+id/txtNombre"
-        android:hint="Dirección"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+            <TextView
+                android:id="@+id/txtDireccion"
+                android:layout_width="@dimen/largo_row_perro"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txtNombre"
+                android:layout_alignStart="@+id/txtNombre"
+                android:layout_below="@+id/txtNombre"
+                android:hint="Dirección"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <TextView
-        android:id="@+id/txtCorreo"
-        android:layout_width="@dimen/largo_row_perro"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtDireccion"
-        android:layout_alignStart="@+id/txtDireccion"
-        android:layout_below="@+id/txtDireccion"
-        android:hint="Correo"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-    <TextView
-        android:id="@+id/txtTelefono"
-        android:layout_width="@dimen/largo_row_perro"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtCorreo"
-        android:layout_alignStart="@+id/txtCorreo"
-        android:layout_below="@+id/txtCorreo"
-        android:hint="Telefono"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/stat_sys_phone_call"
-        android:background="@color/colorAccent"
-        android:id="@+id/imgTelefono"
-        android:layout_toRightOf="@+id/txtTelefono"
-        android:layout_below="@+id/txtNombre"
-        android:paddingLeft="6dp"
-        android:paddingRight="6dp"
-        android:paddingTop="3dp"
-        android:paddingBottom="3dp"
-        android:layout_marginLeft="5dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground"/>
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/imgTelefono"
-        android:id="@+id/imgEmail"
-        android:src="@android:drawable/sym_action_email"
-        android:background="@color/colorAccent"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:layout_marginLeft="15dp"
-        android:layout_below="@+id/txtNombre"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground"/>
+            <TextView
+                android:id="@+id/txtCorreo"
+                android:layout_width="@dimen/largo_row_perro"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txtDireccion"
+                android:layout_alignStart="@+id/txtDireccion"
+                android:layout_below="@+id/txtDireccion"
+                android:hint="Correo"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+            <TextView
+                android:id="@+id/txtTelefono"
+                android:layout_width="@dimen/largo_row_perro"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txtCorreo"
+                android:layout_alignStart="@+id/txtCorreo"
+                android:layout_below="@+id/txtCorreo"
+                android:hint="Telefono"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.40"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/stat_sys_phone_call"
+                android:background="@color/colorAccent"
+                android:id="@+id/imgTelefono"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/imgTelefono"
+                android:id="@+id/imgEmail"
+                android:src="@android:drawable/sym_action_email"
+                android:background="@color/colorAccent"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"/>
+
+            </RelativeLayout>
 
 
-        </RelativeLayout>
+    </LinearLayout>
 
     </android.support.v7.widget.CardView>

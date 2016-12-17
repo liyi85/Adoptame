@@ -25,12 +25,12 @@ import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.example.andrearodriguez.adoptame.R;
 import com.example.andrearodriguez.adoptame.entities.Bebe;
 import com.example.andrearodriguez.adoptame.main.ui.MainActivity;
+import com.example.andrearodriguez.adoptame.perrodetail.ui.DetailPerroActivity;
 import com.example.andrearodriguez.adoptame.perrolist.PerroListPresenter;
 import com.example.andrearodriguez.adoptame.perrolist.ui.adapter.OnItemClickListener;
 import com.example.andrearodriguez.adoptame.perrolist.ui.adapter.PerroListAdapter;
 
 import java.io.ByteArrayOutputStream;
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -156,9 +156,33 @@ public class PerroListActivity extends AppCompatActivity implements PerroListVie
 
     @Override
     public void onPerroClick(Bebe bebe) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(bebe.getUrl()));
+
+        String nombre = bebe.getNombre().toString();
+        String edad = bebe.getEdad().toString();
+        String tamano = bebe.getTamaño().toString();
+        String sexo = bebe.getSexo().toString();
+        String vacunado = bebe.getVacunacion();
+        String esterilizado = bebe.getEsterilizacion();
+        String foto = bebe.getUrl().toString();
+        String fundacion = bebe.getFundacion();
+        String email = bebe.getEmail();
+
+
+        Intent intent = new Intent(this, DetailPerroActivity.class);
+
+        intent.putExtra("nombrePerro", nombre);
+        intent.putExtra("edadPerro", edad);
+        intent.putExtra("tamanoPerro", tamano);
+        intent.putExtra("sexoPerro", sexo);
+        intent.putExtra("vacunaPerro", vacunado);
+        intent.putExtra("esterilizadoPerro", esterilizado);
+        intent.putExtra("fotoPerro", foto);
+        intent.putExtra("fundacionPerro", fundacion);
+        intent.putExtra("emailPerro", email);
+
         startActivity(intent);
     }
+
 
     @Override
     public void onShareclick(Bebe bebe, ImageView img, TextView sexo, TextView edad) {
@@ -186,10 +210,6 @@ public class PerroListActivity extends AppCompatActivity implements PerroListVie
         adapter.notifyDataSetChanged();
     }
 
-    @Override
-    public void setBebes(List<Bebe> data) {
-        adapter.notifyDataSetChanged();
-    }
 
     @Override
     public void onFavClick(Bebe bebe) {

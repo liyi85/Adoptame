@@ -63,6 +63,8 @@
     <string name="recipemain.menu.action.main">principal</string>
     <string name="global.menu.action.show_all">Mostrar todos</string>
     <string name="global.menu.action.show_fav">Mostrar faoritos</string>
+    <string name="main_perro_info">Biografía</string>
+    <string name="main_fundacion_info">Fundacion</string>
 
 
 </resources>

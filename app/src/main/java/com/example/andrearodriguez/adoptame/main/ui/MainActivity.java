@@ -10,14 +10,16 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.TableRow;
 
 import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.example.andrearodriguez.adoptame.R;
+import com.example.andrearodriguez.adoptame.entities.Bebe;
 import com.example.andrearodriguez.adoptame.entities.Fundacion;
 import com.example.andrearodriguez.adoptame.fundacioneslist.ui.FundationListActivity;
 import com.example.andrearodriguez.adoptame.main.MainPresenter;
 import com.example.andrearodriguez.adoptame.perrolist.ui.PerroListActivity;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -50,20 +52,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.appbar)
     AppBarLayout appbar;
-    @Bind(R.id.txtarriba)
-    TableRow txtarriba;
-    @Bind(R.id.arriba)
-    TableRow arriba;
-    @Bind(R.id.txtabajo)
-    TableRow txtabajo;
-    @Bind(R.id.abajo)
-    TableRow abajo;
-    @Bind(R.id.imgAbout)
-    Button imgAbout;
-    @Bind(R.id.abajo2)
-    TableRow abajo2;
+
 
     private BebeAdoptaApp app;
+    private List<Bebe> perroList;
 
     Fundacion fundacion;
 
@@ -76,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         setupInjection();
         setupNavigation();
 
+
+
     }
 
     private void setupNavigation() {
@@ -86,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 //        String email = sharedPreferences.getString(app.getEmailKey(), getString(R.string.app_name));
 //        getSupportActionBar().setTitle(email);
+
 
     }
 

@@ -10,105 +10,19 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtNombre"
+            android:id="@+id/txtNombreFundacion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Nombre" />
+            android:text="Fundacion" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
 
-        <ImageView
-            android:id="@+id/imgPerro"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:src="@mipmap/ic_launcher"
-            android:layout_margin="5dp"/>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.6"
-            android:orientation="vertical">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Edad" />
-
-                <TextView
-                    android:id="@+id/txtEdad"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Edad" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Tamaño" />
-
-                <TextView
-                    android:id="@+id/txtTamano"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Tamaño" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Sexo" />
-
-                <TextView
-                    android:id="@+id/txtSexo"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Sexo" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="250dp"
         android:orientation="vertical"
         android:layout_margin="10dp">
 
@@ -118,18 +32,56 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <TextView
+            <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="vacunado" />
+                android:layout_weight="0.2"
+                 android:src="@mipmap/ic_phone"
+                android:background="@color/colorAccent"/>
 
             <TextView
-                android:id="@+id/txtVacunacion"
+                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_weight="0.6"
+                android:text="Telefono" />
+
+            <TextView
+                android:id="@+id/txtTelefono"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="vacunado" />
+                android:text="" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:src="@mipmap/ic_email"
+                android:background="@color/colorAccent"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:text="Email"
+                android:gravity="center_vertical"/>
+
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""/>
 
         </LinearLayout>
 
@@ -138,18 +90,26 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:src="@mipmap/ic_address"
+                android:background="@color/colorAccent"/>
 
             <TextView
+                android:layout_marginLeft="10dp"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="esterilizado" />
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:text="Direccion" />
             <TextView
-                android:id="@+id/txtEsterilizacion"
+                android:id="@+id/txtDireccion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="esterilizado" />
+                android:text="" />
 
         </LinearLayout>
 
@@ -158,19 +118,28 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
-                <TextView
+
+                <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="discapacidad"/>
+                    android:layout_weight="0.2"
+                    android:src="@mipmap/ic_person"
+                    android:background="@color/colorAccent"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:text="Persona Encargada"
+                    android:gravity="center_vertical"/>
 
 
                 <TextView
-                    android:id="@+id/txtDiscapacidad"
+                    android:id="@+id/txtRepresentante"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="discapacidad"/>
+                    android:text=""/>
 
             </LinearLayout>
 

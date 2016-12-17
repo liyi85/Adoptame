@@ -28,6 +28,7 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
     private OnItemClickListener clickListener;
 
 
+
     public PerroListAdapter(List<Bebe> perroList, ImageLoader imageLoader, OnItemClickListener clickListener) {
         this.perroList = perroList;
         this.imageLoader = imageLoader;
@@ -50,7 +51,7 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
 
         imageLoader.load(holder.imgDog, currenBebe.getUrl());
 
-        holder.txtNombre.setText(currenBebe.getNombre());
+        holder.txtNombre.setText(currenBebe.getNombre().toUpperCase());
         holder.txtTamano.setText(currenBebe.getTamaño());
         holder.txtSexo.setText(currenBebe.getSexo());
         holder.txtEdad.setText(currenBebe.getEdad());

@@ -14,7 +14,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Nombre" />
+            android:text="Nombre"
+            android:background="#E2E2E2"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     </LinearLayout>
 
@@ -29,8 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:src="@mipmap/ic_launcher"
-            android:layout_margin="5dp"/>
+            android:layout_marginRight="5dp"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -49,14 +51,16 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Edad" />
+                    android:text="vacunado"
+                    android:textColor="@android:color/black"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
 
                 <TextView
-                    android:id="@+id/txtEdad"
+                    android:id="@+id/txtVacunacion"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Edad" />
+                    android:text="vacunado" />
 
             </LinearLayout>
             <LinearLayout
@@ -69,14 +73,18 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Tamaño" />
-
+                    android:text="esterilizado"
+                    android:textColor="@android:color/black"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
                 <TextView
-                    android:id="@+id/txtTamano"
+                    android:id="@+id/txtEsterilizacion"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Tamaño" />
+                    android:text="esterilizado" />
+
+
+
 
             </LinearLayout>
 
@@ -90,14 +98,20 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Sexo" />
+                    android:text="discapacidad"
+                    android:textColor="@android:color/black"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+
 
                 <TextView
-                    android:id="@+id/txtSexo"
+                    android:id="@+id/txtDiscapacidad"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Sexo" />
+                    android:text="discapacidad"/>
+
+
+
 
             </LinearLayout>
 
@@ -108,7 +122,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:orientation="vertical"
         android:layout_margin="10dp">
 
@@ -118,18 +132,21 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="vacunado" />
 
             <TextView
-                android:id="@+id/txtVacunacion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="vacunado" />
+                android:text="Edad"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+            <TextView
+                android:id="@+id/txtEdad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Edad" />
 
         </LinearLayout>
 
@@ -139,17 +156,21 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="esterilizado" />
+                android:text="Tamaño"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
+
             <TextView
-                android:id="@+id/txtEsterilizacion"
+                android:id="@+id/txtTamano"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="esterilizado" />
+                android:text="Tamaño" />
 
         </LinearLayout>
 
@@ -158,19 +179,21 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="discapacidad"/>
-
+                    android:text="Sexo"
+                    android:textColor="@android:color/black"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
 
                 <TextView
-                    android:id="@+id/txtDiscapacidad"
+                    android:id="@+id/txtSexo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="discapacidad"/>
+                    android:text="Sexo" />
 
             </LinearLayout>
 

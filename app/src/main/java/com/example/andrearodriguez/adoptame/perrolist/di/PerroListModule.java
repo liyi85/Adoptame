@@ -32,9 +32,11 @@ public class PerroListModule {
     private PerroListView view;
     private OnItemClickListener clickListener;
 
+
     public PerroListModule(PerroListView view, OnItemClickListener clickListener) {
         this.view = view;
         this.clickListener = clickListener;
+
     }
 
     @Provides

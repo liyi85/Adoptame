@@ -24,6 +24,8 @@ public class DetailPerroActivity extends AppCompatActivity {
     @Bind(R.id.container)
     ViewPager container;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,7 @@ public class DetailPerroActivity extends AppCompatActivity {
 
 
     }
+
 
     private void setupAdapter() {
         Fragment[] fragment = new Fragment[]{new PerroFragment(), new FundacionFragment()};

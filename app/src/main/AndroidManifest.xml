@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.andrearodriguez.adoptame">
+    package="com.adoptame.andrearodriguez.adoptame">
 
-    <uses-permission android:name="com.example.andrearodriguez.photofeed.permission.MAPS_RECEIVE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -21,7 +21,7 @@
         android:required="true" />
 
     <application
-        android:name=".BebeAdoptaApp"
+        android:name="com.adoptame.andrearodriguez.adoptame.BebeAdoptaApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,7 +32,7 @@
             android:value="@string/CLOUDINARY_URL" />
 
         <activity
-            android:name=".splash.SplashScreenActivity"
+            android:name="com.adoptame.andrearodriguez.adoptame.splash.SplashScreenActivity"
             android:label="@string/app_name"
             android:noHistory="true">
             >
@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".main.ui.MainActivity"
+            android:name="com.adoptame.andrearodriguez.adoptame.main.ui.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -52,44 +52,44 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".perrolist.ui.PerroListActivity"
+            android:name="com.adoptame.andrearodriguez.adoptame.perrolist.ui.PerroListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".main.ui.MainActivity" />
+                android:value="com.adoptame.andrearodriguez.adoptame.main.ui.MainActivity" />
         </activity>
         <activity
-            android:name=".fundacioneslist.ui.FundationListActivity"
+            android:name="com.adoptame.andrearodriguez.adoptame.fundacioneslist.ui.FundationListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:screenOrientation="portrait"
-                android:value=".main.ui.MainActivity" />
+                android:value="com.adoptame.andrearodriguez.adoptame.main.ui.MainActivity" />
         </activity>
         <activity
-            android:name=".perrodetail.ui.DetailPerroActivity"
+            android:name="com.adoptame.andrearodriguez.adoptame.perrodetail.ui.DetailPerroActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".perrolist.ui.PerroListActivity" />
+                android:value="com.adoptame.andrearodriguez.adoptame.perrolist.ui.PerroListActivity" />
         </activity>
         <activity
-            android:name=".gatolist.ui.GatoListActivity"
+            android:name="com.adoptame.andrearodriguez.adoptame.gatolist.ui.GatoListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".main.ui.MainActivity" />
+                android:value="com.adoptame.andrearodriguez.adoptame.main.ui.MainActivity" />
         </activity>
-        <activity android:name=".gatodetail.ui.DetailGatoActivity"
+        <activity android:name="com.adoptame.andrearodriguez.adoptame.gatodetail.ui.DetailGatoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".gatolist.ui.GatoListActivity" />
+                android:value="com.adoptame.andrearodriguez.adoptame.gatolist.ui.GatoListActivity" />
 
         </activity>
     </application>

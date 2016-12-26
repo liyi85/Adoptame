@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:628281014610:android:c2cef8bd84a5d4ae",
         "android_client_info": {
-          "package_name": "com.example.andrearodriguez.adoptame"
+          "package_name": "com.adoptame.andrearodriguez.adoptame"
         }
       },
       "oauth_client": [
@@ -41,7 +41,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:628281014610:android:e52b286cd568cfc5",
         "android_client_info": {
-          "package_name": "com.example.andrearodriguez.fundaciones"
+          "package_name": "com.adoptame.andrearodriguez.fundaciones"
         }
       },
       "oauth_client": [

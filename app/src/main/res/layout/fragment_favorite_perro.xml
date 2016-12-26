@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.andrearodriguez.adoptame.perrolist2.fragments.FavoritePerroFragment">
+    tools:context="com.adoptame.andrearodriguez.adoptame.perrolist2.fragments.FavoritePerroFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

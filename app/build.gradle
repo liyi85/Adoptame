@@ -11,7 +11,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "com.example.andrearodriguez.adoptame"
+        applicationId "com.adoptame.andrearodriguez.adoptame"
         minSdkVersion 14
         targetSdkVersion 24
         versionCode 1

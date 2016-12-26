@@ -14,7 +14,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.example.andrearodriguez.adoptame.R;
@@ -58,11 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.appbar)
     AppBarLayout appbar;
-    @Bind(R.id.counterPerros)
-    TextView counterPerros;
     @Bind(R.id.imgFundation)
     Button imgFundation;
-    @Bind(R.id.imgAbout)
+    @Bind(R.id.imgEventos)
     Button imgAbout;
 
 
@@ -159,14 +157,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentG);
                 break;
             case R.id.imgOtro:
+                Toast.makeText(getApplicationContext(), "Estamos trabajando en esta sección", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.imgEncontrar:
+                Toast.makeText(getApplicationContext(), "Estamos trabajando en esta sección", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.imgFundation:
                 Intent intentF = new Intent(this, FundationListActivity.class);
                 startActivity(intentF);
                 break;
-            case R.id.imgAbout:
+            case R.id.imgEventos:
+                Toast.makeText(getApplicationContext(), "Estamos trabajando en esta sección", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

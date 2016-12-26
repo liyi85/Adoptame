@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.imgPerro, R.id.imgCat, R.id.imgOtro, R.id.imgEncontrar, R.id.imgFundation})
+    @OnClick({R.id.imgPerro, R.id.imgCat, R.id.imgOtro, R.id.imgEncontrar, R.id.imgFundation, R.id.imgEventos})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.imgPerro:

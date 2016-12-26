@@ -47,30 +47,35 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Perros"
-
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 />
-            <TextView
-                android:id="@+id/counterPerros"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginRight="5dp"
-                android:gravity="end"
-                android:layout_weight="1" />
+                />
+            <!--<TextView-->
+                <!--android:id="@+id/counterPerros"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="0"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:gravity="end"-->
+                <!--android:layout_weight="1" />-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Gatos"
-
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:gravity="end"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1" />
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="0"-->
+                <!--android:gravity="end"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_weight="1" />-->
 
         </LinearLayout>
 
@@ -118,27 +123,32 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Otros"
-
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginRight="5dp"
-                android:gravity="end"
-                android:layout_weight="1" />
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="0"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:gravity="end"-->
+            <!--android:layout_weight="1" />-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Perdido" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:gravity="end"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1" />
+                android:text="Perdidos"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="0"-->
+            <!--android:gravity="end"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:layout_weight="1" />-->
 
         </LinearLayout>
 

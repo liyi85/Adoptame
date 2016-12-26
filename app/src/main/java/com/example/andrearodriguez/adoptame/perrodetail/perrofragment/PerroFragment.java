@@ -40,7 +40,11 @@ public class PerroFragment extends Fragment {
     TextView txtDiscapacidad;
 
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
+    }
     public PerroFragment() {
         // Required empty public constructor
     }
@@ -60,8 +64,9 @@ public class PerroFragment extends Fragment {
         String vacunado = getActivity().getIntent().getExtras().getString("vacunaPerro");
         String esterilizado = getActivity().getIntent().getExtras().getString("esterilizadoPerro");
         String foto = getActivity().getIntent().getExtras().getString("fotoPerro");
+        String discapacitado = getActivity().getIntent().getExtras().getString("discapacitadoPerro");
 
-        Toast.makeText(getActivity(), "Cargando la foto, por favor espere", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Cargando la foto, por favor espere", Toast.LENGTH_SHORT).show();
         String foto2 = (foto + ".jpg");
         Glide.with(getActivity()).load(foto2).centerCrop().into(imgPerro);
 
@@ -73,6 +78,7 @@ public class PerroFragment extends Fragment {
         txtSexo.setText(sexo);
         txtVacunacion.setText(vacunado);
         txtEsterilizacion.setText(esterilizado);
+        txtDiscapacidad.setText(discapacitado);
 
         return view;
 

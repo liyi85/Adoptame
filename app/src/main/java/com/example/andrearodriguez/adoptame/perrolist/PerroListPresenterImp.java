@@ -88,23 +88,6 @@ public class PerroListPresenterImp implements PerroListPresenter{
     }
 
     @Override
-    public void toggleFavorite(Bebe bebe) {
-        boolean fav = bebe.getFavorite();
-        bebe.setFavorite(!fav);
-        interactor.excecute(bebe);
-    }
-
-    @Override
-    public void showAll() {
-        interactor.searchAll();
-    }
-
-    @Override
-    public void showFavs() {
-        interactor.searchFav();
-    }
-
-    @Override
     public PerroListView getView() {
         return this.view;
     }

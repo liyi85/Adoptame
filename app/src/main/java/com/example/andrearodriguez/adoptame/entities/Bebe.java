@@ -1,19 +1,17 @@
 package com.example.andrearodriguez.adoptame.entities;
 
 
-import com.example.andrearodriguez.adoptame.db.BebesDatabase;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.annotations.SerializedName;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
-import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 
 
 /**
  * Created by andrearodriguez on 7/24/16.
  */
-@Table(database = BebesDatabase.class)
+
 public class Bebe extends BaseModel{
 
     @JsonIgnore
@@ -40,6 +38,15 @@ public class Bebe extends BaseModel{
     private String fundacion;
     private String vacunacion;
     private String esterilizacion;
+    private String discapacitado;
+
+    public String getDiscapacitado() {
+        return discapacitado;
+    }
+
+    public void setDiscapacitado(String discapacitado) {
+        this.discapacitado = discapacitado;
+    }
 
     public String getId() {
         return id;

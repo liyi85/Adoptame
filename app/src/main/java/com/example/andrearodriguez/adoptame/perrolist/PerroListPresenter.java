@@ -17,12 +17,6 @@ public interface PerroListPresenter {
     void removePerro(Bebe bebe);
     void onEventMainThread (PerroListEvent event);
 
-
-    void toggleFavorite (Bebe bebe);
-
-    void showAll();
-    void showFavs();
-
     PerroListView getView();
 
 }

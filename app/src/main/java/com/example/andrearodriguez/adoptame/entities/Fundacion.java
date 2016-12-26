@@ -14,7 +14,7 @@ public class Fundacion {
 
 
     private String email;
-    private String representante;
+    private String personaContacto;
     private String nombreFundacion;
     private String telefono;
     private String direccion;
@@ -35,12 +35,12 @@ public class Fundacion {
         this.email = email;
     }
 
-    public String getRepresentante() {
-        return representante;
+    public String getPersonaContacto() {
+        return personaContacto;
     }
 
-    public void setRepresentante(String representante) {
-        this.representante = representante;
+    public void setPersonaContacto(String personaContacto) {
+        this.personaContacto = personaContacto;
     }
 
     public String getNombreFundacion() {

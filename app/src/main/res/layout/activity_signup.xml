@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="@string/loging.message.representante"
+            android:hint="@string/loging.message.personaContacto"
             android:ems="10"
             android:id="@+id/txtRepresentante" />
 

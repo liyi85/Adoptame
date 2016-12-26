@@ -1,6 +1,5 @@
 package com.example.andrearodriguez.adoptame.libs.base.di;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 
@@ -25,11 +24,11 @@ import dagger.Provides;
  */
 @Module
 public class LibsModule {
-    private Activity activity;
+    private Fragment fragment;
 
 
-    public LibsModule(Activity activity) {
-        this.activity = activity;
+    public LibsModule(Fragment fragment) {
+        this.fragment = fragment;
     }
 
     @Provides
@@ -53,14 +52,14 @@ public class LibsModule {
 
     @Provides
     @Singleton
-    RequestManager providesRequestManager(Activity activity){
-        return Glide.with(activity);
+    RequestManager providesRequestManager(Fragment fragment){
+        return Glide.with(fragment);
     }
 
     @Provides
     @Singleton
-    Activity providesActivity(){
-        return  this.activity;
+    Fragment providesFragment(){
+        return  this.fragment;
     }
     @Provides
     @Singleton

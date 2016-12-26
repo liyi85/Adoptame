@@ -80,7 +80,7 @@ public class FundationListActivity extends AppCompatActivity implements Fundatio
     }
 
     private void setupToolbar() {
-        toolbar.setTitle("fundaciones");
+        toolbar.setTitle(R.string.main_fundacio);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -126,7 +126,7 @@ public class FundationListActivity extends AppCompatActivity implements Fundatio
             Intent intenEmail = new Intent(Intent.ACTION_SEND);
             intenEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
             intenEmail.setType("message/rfc822");
-            startActivity(Intent.createChooser(intenEmail, "Elige su cliente de Email :"));
+            startActivity(Intent.createChooser(intenEmail, "Eliga su cliente de Email :"));
         }
     }
 

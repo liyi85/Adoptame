@@ -98,16 +98,6 @@ public class PerroListRepositoryImp implements PerroListRepository{
         post();
     }
 
-    @Override
-    public void getFavoritesBebe() {
-
-    }
-
-    @Override
-    public void getAll() {
-
-    }
-
 
     private void post(int type, Bebe bebe) {
         post(type, bebe, null);

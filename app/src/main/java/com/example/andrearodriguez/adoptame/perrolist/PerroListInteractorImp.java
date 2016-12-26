@@ -33,15 +33,4 @@ public class PerroListInteractorImp implements PerroListInteractor{
 
     }
 
-    @Override
-    public void searchFav() {
-        repository.getFavoritesBebe();
-    }
-
-    @Override
-    public void searchAll() {
-        repository.getAll();
-    }
-
-
 }

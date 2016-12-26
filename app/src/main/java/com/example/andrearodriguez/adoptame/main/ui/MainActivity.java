@@ -1,21 +1,27 @@
 package com.example.andrearodriguez.adoptame.main.ui;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.example.andrearodriguez.adoptame.R;
 import com.example.andrearodriguez.adoptame.entities.Bebe;
 import com.example.andrearodriguez.adoptame.entities.Fundacion;
 import com.example.andrearodriguez.adoptame.fundacioneslist.ui.FundationListActivity;
+import com.example.andrearodriguez.adoptame.gatolist.ui.GatoListActivity;
 import com.example.andrearodriguez.adoptame.main.MainPresenter;
 import com.example.andrearodriguez.adoptame.perrolist.ui.PerroListActivity;
 
@@ -52,12 +58,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.appbar)
     AppBarLayout appbar;
+    @Bind(R.id.counterPerros)
+    TextView counterPerros;
+    @Bind(R.id.imgFundation)
+    Button imgFundation;
+    @Bind(R.id.imgAbout)
+    Button imgAbout;
 
 
     private BebeAdoptaApp app;
     private List<Bebe> perroList;
 
     Fundacion fundacion;
+
+    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +81,41 @@ public class MainActivity extends AppCompatActivity {
         app = (BebeAdoptaApp) getApplication();
         setupInjection();
         setupNavigation();
+        checkStoragePermision();
+    }
 
+    private void checkStoragePermision() {
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
 
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
 
+            } else {
+
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                } else {
+
+                }
+                return;
+            }
+        }
     }
 
     private void setupNavigation() {
@@ -101,8 +147,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    @OnClick({R.id.imgPerro, R.id.imgCat, R.id.imgOtro, R.id.imgEncontrar, R.id.imgFundation })
+    @OnClick({R.id.imgPerro, R.id.imgCat, R.id.imgOtro, R.id.imgEncontrar, R.id.imgFundation})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.imgPerro:
@@ -110,6 +155,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.imgCat:
+                Intent intentG = new Intent(this, GatoListActivity.class);
+                startActivity(intentG);
                 break;
             case R.id.imgOtro:
                 break;

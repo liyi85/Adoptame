@@ -50,6 +50,7 @@
 
                 />
             <TextView
+                android:id="@+id/counterPerros"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="0"

@@ -9,6 +9,11 @@ import com.example.andrearodriguez.adoptame.fundacioneslist.di.FundationListModu
 import com.example.andrearodriguez.adoptame.fundacioneslist.ui.FundationListActivity;
 import com.example.andrearodriguez.adoptame.fundacioneslist.ui.FundationListView;
 import com.example.andrearodriguez.adoptame.fundacioneslist.ui.adapters.OnItemClickListenerF;
+import com.example.andrearodriguez.adoptame.gatolist.di.DaggerGatoListComponent;
+import com.example.andrearodriguez.adoptame.gatolist.di.GatoListComponent;
+import com.example.andrearodriguez.adoptame.gatolist.di.GatoListModule;
+import com.example.andrearodriguez.adoptame.gatolist.ui.GatoListFragment;
+import com.example.andrearodriguez.adoptame.gatolist.ui.GatoListView;
 import com.example.andrearodriguez.adoptame.libs.base.di.LibsModule;
 import com.example.andrearodriguez.adoptame.main.di.DaggerMainComponent;
 import com.example.andrearodriguez.adoptame.main.di.MainComponent;
@@ -16,11 +21,10 @@ import com.example.andrearodriguez.adoptame.main.di.MainModule;
 import com.example.andrearodriguez.adoptame.perrolist.di.DaggerPerroLisComponent;
 import com.example.andrearodriguez.adoptame.perrolist.di.PerroLisComponent;
 import com.example.andrearodriguez.adoptame.perrolist.di.PerroListModule;
-import com.example.andrearodriguez.adoptame.perrolist.ui.PerroListActivity;
+import com.example.andrearodriguez.adoptame.perrolist.ui.PerroListFragment;
 import com.example.andrearodriguez.adoptame.perrolist.ui.PerroListView;
 import com.example.andrearodriguez.adoptame.perrolist.ui.adapter.OnItemClickListener;
 import com.firebase.client.Firebase;
-import com.raizlabs.android.dbflow.config.FlowManager;
 
 
 /**
@@ -44,25 +48,15 @@ public class BebeAdoptaApp extends Application {
         super.onCreate();
         initFirebase();
         initModules();
-        initDB();
-
-    }
-
-    private void initDB() {
-        FlowManager.init(this);
     }
 
 
     @Override
     public void onTerminate() {
         super.onTerminate();
-        DBTearDown();
 
     }
 
-    private void DBTearDown() {
-        FlowManager.destroy();
-    }
 
     private void initModules() {
         bebeAdoptaAppModule = new BebeAdoptaAppModule(this);
@@ -94,12 +88,12 @@ public class BebeAdoptaApp extends Application {
                 .build();
     }
 
-    public PerroLisComponent getPerroLisComponent (PerroListActivity activity, PerroListView view, OnItemClickListener clickListener){
+    public PerroLisComponent getPerroLisComponent (PerroListFragment fragment, PerroListView view, OnItemClickListener clickListener){
         return DaggerPerroLisComponent
                 .builder()
                 .bebeAdoptaAppModule(bebeAdoptaAppModule)
                 .domainModule(domainModule)
-                .libsModule(new LibsModule(activity))
+                .libsModule(new LibsModule(fragment))
                 .perroListModule(new PerroListModule(view, clickListener))
                 .build();
     }
@@ -109,8 +103,18 @@ public class BebeAdoptaApp extends Application {
                 .builder()
                 .bebeAdoptaAppModule(bebeAdoptaAppModule)
                 .domainModule(domainModule)
-                .libsModule(new LibsModule(activity))
+                .libsModule(new LibsModule(null))
                 .fundationListModule(new FundationListModule(view, clickListenerF))
+                .build();
+    }
+
+    public GatoListComponent getGatoListComponent (GatoListFragment fragment, GatoListView view, com.example.andrearodriguez.adoptame.gatolist.ui.adapter.OnItemClickListener clickListenerG){
+        return DaggerGatoListComponent
+                .builder()
+                .bebeAdoptaAppModule(bebeAdoptaAppModule)
+                .domainModule(domainModule)
+                .libsModule(new LibsModule(fragment))
+                .gatoListModule(new GatoListModule(view, clickListenerG))
                 .build();
     }
 

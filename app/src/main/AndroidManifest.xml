@@ -44,6 +44,7 @@
         </activity>
         <activity
             android:name=".main.ui.MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
@@ -52,6 +53,7 @@
 
         <activity
             android:name=".perrolist.ui.PerroListActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -59,20 +61,37 @@
         </activity>
         <activity
             android:name=".fundacioneslist.ui.FundationListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:screenOrientation="portrait"
+                android:value=".main.ui.MainActivity" />
+        </activity>
+        <activity
+            android:name=".perrodetail.ui.DetailPerroActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".perrolist.ui.PerroListActivity" />
+        </activity>
+        <activity
+            android:name=".gatolist.ui.GatoListActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".main.ui.MainActivity" />
         </activity>
-        <activity android:name=".perrodetail.ui.DetailPerroActivity"
-                    android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".gatodetail.ui.DetailGatoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".perrolist.ui.PerroListActivity" />
+                android:value=".gatolist.ui.GatoListActivity" />
 
         </activity>
-
-
     </application>
 
 </manifest>

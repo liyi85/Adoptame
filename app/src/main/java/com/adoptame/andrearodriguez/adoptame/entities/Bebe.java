@@ -40,6 +40,16 @@ public class Bebe extends BaseModel{
     private String esterilizacion;
     private String discapacitado;
 
+    private String especie;
+
+    public String getEspecie() {
+        return especie;
+    }
+
+    public void setEspecie(String especie) {
+        this.especie = especie;
+    }
+
     public String getDiscapacitado() {
         return discapacitado;
     }

@@ -92,6 +92,15 @@
                 android:value="com.adoptame.andrearodriguez.adoptame.gatolist.ui.GatoListActivity" />
 
         </activity>
+
+        <activity
+            android:name="com.adoptame.andrearodriguez.adoptame.otroslist.ui.OtrosListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.adoptame.andrearodriguez.adoptame.main.ui.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

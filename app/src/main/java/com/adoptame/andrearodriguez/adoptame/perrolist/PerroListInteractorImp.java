@@ -6,6 +6,7 @@ import com.adoptame.andrearodriguez.adoptame.entities.Bebe;
  * Created by andrearodriguez on 8/18/16.
  */
 public class PerroListInteractorImp implements PerroListInteractor{
+
     private PerroListRepository repository;
 
     public PerroListInteractorImp(PerroListRepository repository) {

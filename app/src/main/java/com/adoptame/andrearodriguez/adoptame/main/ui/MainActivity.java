@@ -23,6 +23,7 @@ import com.adoptame.andrearodriguez.adoptame.entities.Fundacion;
 import com.adoptame.andrearodriguez.adoptame.fundacioneslist.ui.FundationListActivity;
 import com.adoptame.andrearodriguez.adoptame.gatolist.ui.GatoListActivity;
 import com.adoptame.andrearodriguez.adoptame.main.MainPresenter;
+import com.adoptame.andrearodriguez.adoptame.otroslist.ui.OtrosListActivity;
 import com.adoptame.andrearodriguez.adoptame.perrolist.ui.PerroListActivity;
 
 import java.util.List;
@@ -157,7 +158,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentG);
                 break;
             case R.id.imgOtro:
-                Toast.makeText(getApplicationContext(), "Estamos trabajando en esta sección", Toast.LENGTH_SHORT).show();
+                Intent intentO = new Intent(this, OtrosListActivity.class);
+                startActivity(intentO);
                 break;
             case R.id.imgEncontrar:
                 Toast.makeText(getApplicationContext(), "Estamos trabajando en esta sección", Toast.LENGTH_SHORT).show();

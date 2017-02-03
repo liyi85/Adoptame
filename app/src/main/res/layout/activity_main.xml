@@ -9,8 +9,7 @@
     android:fitsSystemWindows="true"
     tools:context=".main.ui.MainActivity"
     android:background="#E2E2E2"
-    android:verticalScrollbarPosition="defaultPosition"
-    >
+    android:verticalScrollbarPosition="defaultPosition">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -35,49 +34,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_below="@+id/appbar">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.05"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Perros"
-                android:gravity="center"
-                android:textColor="@color/colorBlack"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                />
-                />
-            <!--<TextView-->
-                <!--android:id="@+id/counterPerros"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="0"-->
-                <!--android:layout_marginRight="5dp"-->
-                <!--android:gravity="end"-->
-                <!--android:layout_weight="1" />-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Gatos"
-                android:gravity="center"
-                android:textColor="@color/colorBlack"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                />
-            <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="0"-->
-                <!--android:gravity="end"-->
-                <!--android:layout_marginRight="5dp"-->
-                <!--android:layout_weight="1" />-->
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -108,48 +64,6 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.05"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Otros"
-                android:gravity="center"
-                android:textColor="@color/colorBlack"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                />
-            <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="0"-->
-            <!--android:layout_marginRight="5dp"-->
-            <!--android:gravity="end"-->
-            <!--android:layout_weight="1" />-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Perdidos"
-                android:gravity="center"
-                android:textColor="@color/colorBlack"
-                android:textAppearance="?android:attr/textAppearanceSmall"/>
-            <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="0"-->
-            <!--android:gravity="end"-->
-            <!--android:layout_marginRight="5dp"-->
-            <!--android:layout_weight="1" />-->
-
         </LinearLayout>
 
         <LinearLayout
@@ -181,20 +95,6 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"/>
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.03"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
         </LinearLayout>
 
         <LinearLayout

@@ -1,14 +1,13 @@
-package com.adoptame.andrearodriguez.adoptame.perrolist.events;
+package com.adoptame.andrearodriguez.adoptame.otroslist.event;
 
 import com.adoptame.andrearodriguez.adoptame.entities.Bebe;
 
 import java.util.List;
 
 /**
- * Created by andrearodriguez on 8/18/16.
+ * Created by andrearodriguez on 2/2/17.
  */
-public class PerroListEvent {
-
+public class OtrosListEvent {
     private int type;
     private Bebe bebe;
     private String error;

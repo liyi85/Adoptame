@@ -1,5 +1,7 @@
 package com.adoptame.andrearodriguez.adoptame.perrolist.di;
 
+import android.content.Context;
+
 import com.adoptame.andrearodriguez.adoptame.domain.FirebaseAPI;
 import com.adoptame.andrearodriguez.adoptame.entities.Bebe;
 import com.adoptame.andrearodriguez.adoptame.libs.base.EventBus;
@@ -61,8 +63,8 @@ public class PerroListModule {
     }
     @Provides
     @Singleton
-    PerroListAdapter providesPerroListAdapter (List<Bebe> perroList, ImageLoader imageLoader, OnItemClickListener clickListener){
-        return new PerroListAdapter(perroList, imageLoader, clickListener);
+    PerroListAdapter providesPerroListAdapter (List<Bebe> perroList, ImageLoader imageLoader, OnItemClickListener clickListener, Context context){
+        return new PerroListAdapter(perroList, imageLoader, clickListener, context);
     }
     @Provides
     @Singleton

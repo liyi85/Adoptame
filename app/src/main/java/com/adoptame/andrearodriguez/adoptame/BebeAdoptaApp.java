@@ -18,6 +18,12 @@ import com.adoptame.andrearodriguez.adoptame.libs.base.di.LibsModule;
 import com.adoptame.andrearodriguez.adoptame.main.di.DaggerMainComponent;
 import com.adoptame.andrearodriguez.adoptame.main.di.MainComponent;
 import com.adoptame.andrearodriguez.adoptame.main.di.MainModule;
+import com.adoptame.andrearodriguez.adoptame.otroslist.di.DaggerOtroListComponent;
+import com.adoptame.andrearodriguez.adoptame.otroslist.di.OtroListComponent;
+import com.adoptame.andrearodriguez.adoptame.otroslist.di.OtroListModule;
+import com.adoptame.andrearodriguez.adoptame.otroslist.ui.OtroListView;
+import com.adoptame.andrearodriguez.adoptame.otroslist.ui.OtrosListFragment;
+import com.adoptame.andrearodriguez.adoptame.otroslist.ui.adapter.OnItemClickListenerOtros;
 import com.adoptame.andrearodriguez.adoptame.perrolist.di.DaggerPerroLisComponent;
 import com.adoptame.andrearodriguez.adoptame.perrolist.di.PerroLisComponent;
 import com.adoptame.andrearodriguez.adoptame.perrolist.di.PerroListModule;
@@ -115,6 +121,16 @@ public class BebeAdoptaApp extends Application {
                 .domainModule(domainModule)
                 .libsModule(new LibsModule(fragment))
                 .gatoListModule(new GatoListModule(view, clickListenerG))
+                .build();
+    }
+
+    public OtroListComponent getOtroListComponent (OtrosListFragment fragment, OtroListView view, OnItemClickListenerOtros onItemClickListener){
+        return DaggerOtroListComponent
+                .builder()
+                .bebeAdoptaAppModule(bebeAdoptaAppModule)
+                .domainModule(domainModule)
+                .libsModule(new LibsModule(fragment))
+                .otroListModule(new OtroListModule(view, onItemClickListener))
                 .build();
     }
 

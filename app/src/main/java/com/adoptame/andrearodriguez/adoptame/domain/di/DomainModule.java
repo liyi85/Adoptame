@@ -1,8 +1,10 @@
 package com.adoptame.andrearodriguez.adoptame.domain.di;
 
 import com.adoptame.andrearodriguez.adoptame.domain.FirebaseAPI;
+import com.adoptame.andrearodriguez.adoptame.domain.FirebaseEventosAPI;
 import com.adoptame.andrearodriguez.adoptame.domain.FirebaseFundacionesAPI;
 import com.adoptame.andrearodriguez.adoptame.domain.FirebaseGatosAPI;
+import com.adoptame.andrearodriguez.adoptame.domain.FirebaseOtrosAPI;
 import com.firebase.client.Firebase;
 
 import javax.inject.Singleton;
@@ -19,6 +21,18 @@ public class DomainModule {
 
     public DomainModule(String firebaseURL) {
         this.firebaseURL = firebaseURL;
+    }
+
+    @Provides
+    @Singleton
+    FirebaseEventosAPI providesFirebaseEventosAPI (Firebase firebase){
+        return new FirebaseEventosAPI(firebase);
+    }
+
+    @Provides
+    @Singleton
+    FirebaseOtrosAPI providesFirebaseOtrosAPI (Firebase firebase){
+        return new FirebaseOtrosAPI(firebase);
     }
 
     @Provides

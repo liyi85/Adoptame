@@ -37,8 +37,6 @@ public class GatoListModule {
         this.clickListener = clickListener;
     }
 
-
-
     @Provides
     @Singleton
     GatoListView providesGatoListView (){
@@ -62,8 +60,8 @@ public class GatoListModule {
     }
     @Provides
     @Singleton
-    GatoListAdapter providesGatoListAdapter (List<Bebe> perroList, ImageLoader imageLoader, OnItemClickListener clickListener){
-        return new GatoListAdapter(perroList, imageLoader, clickListener);
+    GatoListAdapter providesGatoListAdapter (List<Bebe> gatoList, ImageLoader imageLoader, OnItemClickListener clickListener){
+        return new GatoListAdapter(gatoList, imageLoader, clickListener);
     }
     @Provides
     @Singleton

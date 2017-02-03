@@ -3,16 +3,16 @@ package com.adoptame.andrearodriguez.adoptame.libs.base.di;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestManager;
-import com.cloudinary.Cloudinary;
-import com.cloudinary.android.Utils;
 import com.adoptame.andrearodriguez.adoptame.libs.ClaudinaryImageStorage;
 import com.adoptame.andrearodriguez.adoptame.libs.GlideImageLoader;
 import com.adoptame.andrearodriguez.adoptame.libs.GreenRobotEventBus;
 import com.adoptame.andrearodriguez.adoptame.libs.base.EventBus;
 import com.adoptame.andrearodriguez.adoptame.libs.base.ImageLoader;
 import com.adoptame.andrearodriguez.adoptame.libs.base.ImageStorage;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
+import com.cloudinary.Cloudinary;
+import com.cloudinary.android.Utils;
 
 import javax.inject.Singleton;
 
@@ -30,6 +30,7 @@ public class LibsModule {
     public LibsModule(Fragment fragment) {
         this.fragment = fragment;
     }
+
 
     @Provides
     @Singleton

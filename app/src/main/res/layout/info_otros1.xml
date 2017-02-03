@@ -164,29 +164,29 @@
 
         </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:text="Sexo"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Sexo"
-                    android:textColor="@android:color/black"
-                    android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-                <TextView
-                    android:id="@+id/txtSexo"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Sexo" />
-
-            </LinearLayout>
+            <TextView
+                android:id="@+id/txtSexo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sexo" />
 
         </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

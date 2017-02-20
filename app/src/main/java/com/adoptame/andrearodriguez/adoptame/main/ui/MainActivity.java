@@ -37,7 +37,6 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.imgPerro)
@@ -50,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
     Button imgEncontrar;
     @Bind(R.id.main_content)
     RelativeLayout mainContent;
-
 
     @Inject
     MainPresenter presenter;

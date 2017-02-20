@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.adoptame.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.adoptame.andrearodriguez.adoptame.R;
 import com.adoptame.andrearodriguez.adoptame.entities.Bebe;
+import com.adoptame.andrearodriguez.adoptame.otrosdetail.ui.DetailOtrosActivity;
 import com.adoptame.andrearodriguez.adoptame.otroslist.OtrosListPresenter;
 import com.adoptame.andrearodriguez.adoptame.otroslist.ui.adapter.OnItemClickListenerOtros;
 import com.adoptame.andrearodriguez.adoptame.otroslist.ui.adapter.OtroListAdapter;
@@ -160,21 +161,22 @@ public class OtrosListFragment extends Fragment implements OtroListView, OnItemC
         String fundacion = bebe.getFundacion();
         String email = bebe.getEmail();
         String discapacitado = bebe.getDiscapacitado();
+        String especie = bebe.getEspecie();
 
 
-//        Intent intent = new Intent(getActivity(), DetailOtroActivity.class);
-//
-//        intent.putExtra("nombreGato", nombre);
-//        intent.putExtra("edadGato", edad);
-//        intent.putExtra("sexoGato", sexo);
-//        intent.putExtra("vacunaGato", vacunado);
-//        intent.putExtra("esterilizadoGato", esterilizado);
-//        intent.putExtra("fotoGato", foto);
-//        intent.putExtra("fundacionGato", fundacion);
-//        intent.putExtra("emailGato", email);
-//        intent.putExtra("discapacitadoGato", discapacitado);
-//
-//        startActivity(intent);
+        Intent intent = new Intent(getActivity(), DetailOtrosActivity.class);
+
+        intent.putExtra("nombreOtro", nombre);
+        intent.putExtra("edadOtro", edad);
+        intent.putExtra("sexoOtro", sexo);
+        intent.putExtra("vacunaOtro", vacunado);
+        intent.putExtra("esterilizadoOtro", esterilizado);
+        intent.putExtra("fotoOtro", foto);
+        intent.putExtra("fundacionOtro", fundacion);
+        intent.putExtra("emailOtro", email);
+        intent.putExtra("discapacitadoOtro", discapacitado);
+
+        startActivity(intent);
     }
 
     @Override

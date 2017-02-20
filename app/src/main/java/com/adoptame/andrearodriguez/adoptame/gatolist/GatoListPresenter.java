@@ -18,6 +18,5 @@ public interface GatoListPresenter {
     void removeGato(Bebe bebe);
     void onEventMainThread (GatoListEvent event);
 
-
     GatoListView getView();
 }

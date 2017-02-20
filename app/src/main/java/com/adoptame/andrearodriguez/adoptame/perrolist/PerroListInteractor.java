@@ -12,7 +12,4 @@ public interface PerroListInteractor {
     void removePerro(Bebe bebe);
     void excecute(Bebe bebe);
 
-
-
-
 }

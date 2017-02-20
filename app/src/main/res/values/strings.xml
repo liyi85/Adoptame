@@ -68,6 +68,8 @@
 
     <string name="cargando.fotos">Espere que carguen las fotos para poder compartir</string>
     <string name="main_fundacio">Fundaciones</string>
+    <string name="main_titles_otros">Otros</string>
+    <string name="main_otros_info">Otros</string>
 
 
 </resources>

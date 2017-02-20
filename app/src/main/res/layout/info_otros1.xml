@@ -28,7 +28,7 @@
         android:layout_margin="10dp">
 
         <ImageView
-            android:id="@+id/imgPerro"
+            android:id="@+id/imgVarios"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
@@ -151,16 +151,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Tamaño"
+                android:text="Edad"
                 android:textColor="@android:color/black"
                 android:textAppearance="?android:attr/textAppearanceSmall"/>
 
             <TextView
-                android:id="@+id/txtTamano"
+                android:id="@+id/txtEspecie"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Tamaño" />
+                android:text="Especie" />
 
         </LinearLayout>
 

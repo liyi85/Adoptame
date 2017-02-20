@@ -17,6 +17,4 @@ public interface PerroListView {
 
     void onPerroUpload();
 
-
-
 }

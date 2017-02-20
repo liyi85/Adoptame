@@ -1,13 +1,14 @@
-package com.adoptame.andrearodriguez.adoptame.perrodetail.fundacionfragment;
-
+package com.adoptame.andrearodriguez.adoptame.otrosdetail.fundacion;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.adoptame.andrearodriguez.adoptame.R;
@@ -23,41 +24,41 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Created by andrearodriguez on 2/17/17.
  */
-public class FundacionFragment extends Fragment {
-
+public class FundacionOtroFragment extends Fragment {
 
     @Bind(R.id.txtNombreFundacion)
     TextView txtNombreFundacion;
     @Bind(R.id.txtTelefono)
     TextView txtTelefono;
+    @Bind(R.id.linealPhone)
+    LinearLayout linealPhone;
     @Bind(R.id.txtEmail)
     TextView txtEmail;
+    @Bind(R.id.linealEmail)
+    LinearLayout linealEmail;
     @Bind(R.id.txtDireccion)
     TextView txtDireccion;
     @Bind(R.id.txtRepresentante)
     TextView txtRepresentante;
 
-
-
-    // Store instance variables based on arguments passed
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
-    public FundacionFragment() {
+    public FundacionOtroFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.info_perro2, container, false);
+        View view = inflater.inflate(R.layout.info_otros2, container, false);
+
         ButterKnife.bind(this, view);
 
-        final String email = getActivity().getIntent().getExtras().getString("emailPerro");
-
+        final String email = getActivity().getIntent().getExtras().getString("emailOtro");
         Firebase ref = new Firebase("https://fundacionesapp.firebaseIO.com/Fundaciones");
 
         Query query = ref.orderByChild("email").equalTo(email);
@@ -70,7 +71,8 @@ public class FundacionFragment extends Fragment {
                 String direccion = fundacion.getDireccion();
                 String personaContacto = fundacion.getPersonaContacto();
 
-                //Toast.makeText(getContext(), " " + nombreFundacion + " " + telefono + " " + direccion + " " + personaContacto, Toast.LENGTH_LONG).show();
+                Log.i("lo que sale en otros", nombreFundacion + " " + telefono  + " " + direccion + " " + personaContacto);
+               // Toast.makeText(getContext(), " " + nombreFundacion + " " + telefono + " " + direccion + " " + personaContacto, Toast.LENGTH_LONG).show();
 
                 nombreFundacion = nombreFundacion.toUpperCase();
                 txtNombreFundacion.setText(nombreFundacion);
@@ -78,8 +80,6 @@ public class FundacionFragment extends Fragment {
                 txtDireccion.setText(direccion);
                 txtRepresentante.setText(personaContacto);
                 txtEmail.setText(email);
-
-
             }
 
             @Override
@@ -105,7 +105,6 @@ public class FundacionFragment extends Fragment {
         return view;
 
     }
-
 
     @Override
     public void onDestroyView() {

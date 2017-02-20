@@ -24,7 +24,7 @@ public class GatoInfoFragment extends Fragment {
 
     @Bind(R.id.txtNombre)
     TextView txtNombre;
-    @Bind(R.id.imgPerro)
+    @Bind(R.id.imgGato)
     ImageView imgGato;
     @Bind(R.id.txtVacunacion)
     TextView txtVacunacion;

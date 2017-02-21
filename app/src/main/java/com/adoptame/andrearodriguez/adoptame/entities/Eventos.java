@@ -1,11 +1,12 @@
 package com.adoptame.andrearodriguez.adoptame.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.raizlabs.android.dbflow.structure.BaseModel;
 
 /**
  * Created by andrearodriguez on 2/2/17.
  */
-public class Eventos {
+public class Eventos extends BaseModel{
 
     @JsonIgnore
     private String id;
@@ -20,6 +21,15 @@ public class Eventos {
     private String fecha;
     private String hora;
     private String tipoevento;
+    private String fundacion;
+
+    public String getFundacion() {
+        return fundacion;
+    }
+
+    public void setFundacion(String fundacion) {
+        this.fundacion = fundacion;
+    }
 
     public String getId() {
         return id;
@@ -92,4 +102,17 @@ public class Eventos {
     public void setTipoevento(String tipoevento) {
         this.tipoevento = tipoevento;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean equal = false;
+
+        if (obj instanceof Eventos){
+            Eventos eventos = (Eventos)obj;
+            equal = this.id.equals(eventos.getId());
+        }
+        return equal;
+    }
+
+
 }

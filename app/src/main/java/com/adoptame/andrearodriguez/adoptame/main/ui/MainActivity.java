@@ -20,6 +20,7 @@ import com.adoptame.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.adoptame.andrearodriguez.adoptame.R;
 import com.adoptame.andrearodriguez.adoptame.entities.Bebe;
 import com.adoptame.andrearodriguez.adoptame.entities.Fundacion;
+import com.adoptame.andrearodriguez.adoptame.eventoslist.ui.EventosListActivity;
 import com.adoptame.andrearodriguez.adoptame.fundacioneslist.ui.FundationListActivity;
 import com.adoptame.andrearodriguez.adoptame.gatolist.ui.GatoListActivity;
 import com.adoptame.andrearodriguez.adoptame.main.MainPresenter;
@@ -167,7 +168,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentF);
                 break;
             case R.id.imgEventos:
-                Toast.makeText(getApplicationContext(), "Estamos trabajando en esta sección", Toast.LENGTH_SHORT).show();
+                Intent intentE = new Intent(this, EventosListActivity.class);
+                startActivity(intentE);
                 break;
         }
     }

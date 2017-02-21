@@ -6,6 +6,7 @@ import com.adoptame.andrearodriguez.adoptame.libs.base.EventBus;
 import com.adoptame.andrearodriguez.adoptame.perrolist.events.PerroListEvent;
 
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 
 /**
@@ -50,7 +51,7 @@ public class FundationListPresenterImp implements FundationListPresenter{
         interactor.unsubscribe();
     }
 
-    @Subscribe
+    @Subscribe (threadMode = ThreadMode.MAIN)
     @Override
     public void onEventMainThread(FundacionListEvent event) {
         if (this.view != null) {

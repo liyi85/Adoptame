@@ -166,7 +166,6 @@ public class PerroListFragment extends Fragment implements PerroListView, OnItem
         String email = bebe.getEmail();
         String discapacitado = bebe.getDiscapacitado();
 
-
         Intent intent = new Intent(getActivity(), DetailPerroActivity.class);
 
         intent.putExtra("nombrePerro", nombre);
@@ -179,7 +178,6 @@ public class PerroListFragment extends Fragment implements PerroListView, OnItem
         intent.putExtra("fundacionPerro", fundacion);
         intent.putExtra("emailPerro", email);
         intent.putExtra("discapacitadoPerro", discapacitado);
-
 
         startActivity(intent);
     }

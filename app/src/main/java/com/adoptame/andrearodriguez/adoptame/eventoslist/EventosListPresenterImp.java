@@ -1,26 +1,26 @@
-package com.adoptame.andrearodriguez.adoptame.otroslist;
+package com.adoptame.andrearodriguez.adoptame.eventoslist;
 
-import com.adoptame.andrearodriguez.adoptame.entities.Bebe;
+import com.adoptame.andrearodriguez.adoptame.entities.Eventos;
+import com.adoptame.andrearodriguez.adoptame.eventoslist.events.EventosListEvent;
+import com.adoptame.andrearodriguez.adoptame.eventoslist.ui.EventoListView;
 import com.adoptame.andrearodriguez.adoptame.libs.base.EventBus;
-import com.adoptame.andrearodriguez.adoptame.otroslist.event.OtrosListEvent;
-import com.adoptame.andrearodriguez.adoptame.otroslist.ui.OtroListView;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 /**
- * Created by andrearodriguez on 2/2/17.
+ * Created by andrearodriguez on 2/19/17.
  */
 
-public class OtrosListPresenterImp implements OtrosListPresenter{
+public class EventosListPresenterImp implements EventosListPresenter{
 
     private EventBus eventBus;
-    private OtroListView view;
-    private OtrosListInteractor interactor;
+    private EventoListView view;
+    private EventosListInteractor interactor;
 
     private final static String EMPTY_LIST = "Listado vacío";
 
-    public OtrosListPresenterImp(EventBus eventBus, OtroListView view, OtrosListInteractor interactor) {
+    public EventosListPresenterImp(EventBus eventBus, EventoListView view, EventosListInteractor interactor) {
         this.eventBus = eventBus;
         this.view = view;
         this.interactor = interactor;
@@ -55,14 +55,13 @@ public class OtrosListPresenterImp implements OtrosListPresenter{
     }
 
     @Override
-    public void removeOtro(Bebe bebe) {
-        interactor.removeOtro(bebe);
-
+    public void removeEvento(Eventos eventos) {
+        interactor.removeEvento(eventos);
     }
 
     @Subscribe (threadMode = ThreadMode.MAIN)
     @Override
-    public void onEventMainThread(OtrosListEvent event) {
+    public void onEventMainThread(EventosListEvent event) {
         if (this.view != null) {
             if (view != null){
                 view.hideProgress();
@@ -71,24 +70,24 @@ public class OtrosListPresenterImp implements OtrosListPresenter{
             String error = event.getError();
             if (error != null) {
                 if (error.isEmpty()) {
-                    view.onOtroError(EMPTY_LIST);
+                    view.onEventoError(EMPTY_LIST);
                 } else {
-                    view.onOtroError(error);
+                    view.onEventoError(error);
                 }
             } else {
-                if (event.getType() == OtrosListEvent.READ_EVENT) {
-                    view.addOtro(event.getBebe());
-                } else if (event.getType() == OtrosListEvent.DELETE_EVENT) {
-                    view.removeOtro(event.getBebe());
-                }else if (event.getType() == OtrosListEvent.UPDATE_EVENT){
-                    view.onOtroUpload();
+                if (event.getType() == EventosListEvent.READ_EVENT) {
+                    view.addEvento(event.getEventos());
+                } else if (event.getType() == EventosListEvent.DELETE_EVENT) {
+                    view.removeEvento(event.getEventos());
+                }else if (event.getType() == EventosListEvent.UPDATE_EVENT){
+                    view.onEventoUpload();
                 }
             }
         }
     }
 
     @Override
-    public OtroListView getView() {
+    public EventoListView getView() {
         return this.view;
     }
 }

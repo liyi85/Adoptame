@@ -3,6 +3,12 @@ package com.adoptame.andrearodriguez.adoptame;
 import android.app.Application;
 
 import com.adoptame.andrearodriguez.adoptame.domain.di.DomainModule;
+import com.adoptame.andrearodriguez.adoptame.eventoslist.adapter.OnItemClickListenerEventos;
+import com.adoptame.andrearodriguez.adoptame.eventoslist.di.DaggerEventosListComponent;
+import com.adoptame.andrearodriguez.adoptame.eventoslist.di.EventosListComponent;
+import com.adoptame.andrearodriguez.adoptame.eventoslist.di.EventosListModule;
+import com.adoptame.andrearodriguez.adoptame.eventoslist.ui.EventoListView;
+import com.adoptame.andrearodriguez.adoptame.eventoslist.ui.EventosListFragment;
 import com.adoptame.andrearodriguez.adoptame.fundacioneslist.di.DaggerFundationListComponent;
 import com.adoptame.andrearodriguez.adoptame.fundacioneslist.di.FundationListComponent;
 import com.adoptame.andrearodriguez.adoptame.fundacioneslist.di.FundationListModule;
@@ -131,6 +137,16 @@ public class BebeAdoptaApp extends Application {
                 .domainModule(domainModule)
                 .libsModule(new LibsModule(fragment))
                 .otroListModule(new OtroListModule(view, onItemClickListener))
+                .build();
+    }
+
+    public EventosListComponent getEventosListComponent (EventosListFragment fragment, EventoListView view, OnItemClickListenerEventos clickListenerE){
+        return DaggerEventosListComponent
+                .builder()
+                .bebeAdoptaAppModule(bebeAdoptaAppModule)
+                .domainModule(domainModule)
+                .libsModule(new LibsModule(fragment))
+                .eventosListModule(new EventosListModule(view, clickListenerE))
                 .build();
     }
 

@@ -24,16 +24,12 @@ import butterknife.ButterKnife;
  */
 public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.ViewHolder> {
 
-
     private Context context;
     SharedPreference sharedPreference;
 
     private List<Bebe> perroList;
     private ImageLoader imageLoader;
     private OnItemClickListener clickListener;
-
-
-
 
     public PerroListAdapter(List<Bebe> perroList, ImageLoader imageLoader, OnItemClickListener clickListener, Context context) {
         //super(context, R.layout.row_perro, perroList);
@@ -44,8 +40,6 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
         sharedPreference = new SharedPreference();
 
     }
-
-
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -66,7 +60,6 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
         holder.txtSexo.setText(currenBebe.getSexo());
         holder.txtEdad.setText(currenBebe.getEdad());
 
-
         holder.imgFavorito.setTag(currenBebe.getFavorite());
         if (checkFavoriteBebe(currenBebe)){
             holder.imgFavorito.setImageResource(android.R.drawable.btn_star_big_on);
@@ -78,7 +71,6 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
         }
 
         holder.setOnItemClickListener(currenBebe, clickListener);
-
     }
 
     private boolean checkFavoriteBebe(Bebe currenBebe) {
@@ -93,7 +85,6 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
             }
         }
         return check;
-
     }
 
 
@@ -111,7 +102,6 @@ public class PerroListAdapter extends RecyclerView.Adapter<PerroListAdapter.View
     public int getItemCount() {
         return perroList.size();
     }
-
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.imgDog)

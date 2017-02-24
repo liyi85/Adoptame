@@ -1,16 +1,20 @@
 package com.adoptame.andrearodriguez.adoptame.entities;
 
 
+import com.adoptame.andrearodriguez.adoptame.db.BebeDatabase;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.annotations.SerializedName;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
+import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 
 
 /**
  * Created by andrearodriguez on 7/24/16.
  */
+
+@Table(database = BebeDatabase.class)
 
 public class Bebe extends BaseModel{
 

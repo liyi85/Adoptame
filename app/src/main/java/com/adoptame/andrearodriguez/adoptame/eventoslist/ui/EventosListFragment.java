@@ -26,7 +26,6 @@ import android.widget.Toast;
 import com.adoptame.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.adoptame.andrearodriguez.adoptame.R;
 import com.adoptame.andrearodriguez.adoptame.entities.Eventos;
-import com.adoptame.andrearodriguez.adoptame.eventosdetail.ui.DetailEventoActivity;
 import com.adoptame.andrearodriguez.adoptame.eventoslist.EventosListPresenter;
 import com.adoptame.andrearodriguez.adoptame.eventoslist.adapter.EventosListAdapter;
 import com.adoptame.andrearodriguez.adoptame.eventoslist.adapter.OnItemClickListenerEventos;
@@ -145,24 +144,7 @@ public class EventosListFragment extends Fragment implements EventoListView, OnI
 
     @Override
     public void onEventoClick(Eventos eventos) {
-        String nombreE = eventos.getNombre();
-        String lugar = eventos.getLugar();
-        String fecha = eventos.getFecha();
-        String hora = eventos.getHora();
-        String tipo = eventos.getTipoevento();
-        String email = eventos.getEmail();
-        String fundacion = eventos.getFundacion();
-
-        Intent intent = new Intent(getActivity(), DetailEventoActivity.class);
-
-        intent.putExtra("nombreEvento", nombreE);
-        intent.putExtra("lugarEvento", lugar);
-        intent.putExtra("fechaEvento", fecha);
-        intent.putExtra("horaEvento", hora);
-        intent.putExtra("tipoEvento", tipo);
-        intent.putExtra("emailE", email);
-        intent.putExtra("fundacionE", fundacion);
-
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(eventos.getUrl()));
         startActivity(intent);
 
     }

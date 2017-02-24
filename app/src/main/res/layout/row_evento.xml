@@ -31,63 +31,155 @@
                 android:id="@+id/imgEvento"
                 android:src="@mipmap/ic_launcher" />
         </RelativeLayout>
+
+
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.60"
+            android:layout_weight="0.50"
             android:padding="2dp"
             android:orientation="vertical">
-            <TextView
-                android:layout_marginTop="10dp"
-                android:id="@+id/txtNombreEvento"
-                android:layout_width="wrap_content"
-                android:layout_weight="0.8"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:hint="Nombre del Evento"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <TextView
-                android:id="@+id/txtLugar"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_weight="0.7"
                 android:layout_height="0dp"
-                android:gravity="center"
-                android:hint="Lugar"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:layout_weight="1.5"
+                android:padding="2dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/txtNombreEvento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:hint="Nombre del Evento"
+                    android:textColor="@android:color/black"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/txtFecha"
-                android:layout_width="wrap_content"
-                android:layout_weight="0.7"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:hint="Fecha"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/txtHora"
-                android:layout_width="wrap_content"
-                android:layout_weight="0.7"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:hint="Hora"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/txtTipo"
-                android:layout_width="wrap_content"
-                android:layout_weight="0.7"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:hint="Tipo de Evento"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:padding="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtLugar1"
+                    android:layout_width="wrap_content"                            android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lugar"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <TextView
+                    android:id="@+id/txtLugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Lugar"
+                    android:layout_marginLeft="30dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtFecha1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Fecha"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <TextView
+                android:id="@+id/txtFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Fecha"
+                android:layout_marginLeft="30dp"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtHora1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Hora"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            <TextView
+                android:id="@+id/txtHora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="Hora"
+                android:layout_marginLeft="30dp"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtTelefono1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Telefono"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                <TextView
+                    android:id="@+id/txtTelefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Telefono"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/txtTipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Tipo de Evento"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1.3"
                 android:padding="2dp"
                 android:orientation="horizontal">
 
@@ -101,16 +193,6 @@
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"/>
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:src="@android:drawable/btn_star_big_off"
-                    android:id="@+id/imgFavorito"
-
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?android:attr/selectableItemBackground"/>
             </LinearLayout>
 
         </LinearLayout>

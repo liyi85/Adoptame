@@ -27,6 +27,7 @@ import butterknife.ButterKnife;
 public class EventosListAdapter extends RecyclerView.Adapter<EventosListAdapter.ViewHolder> {
 
 
+
     private Context context;
     SharedPreference sharedPreference;
 
@@ -60,6 +61,8 @@ public class EventosListAdapter extends RecyclerView.Adapter<EventosListAdapter.
         holder.txtHora.setText(currenEvento.getHora());
         holder.txtLugar.setText(currenEvento.getLugar());
         holder.txtTipo.setText(currenEvento.getTipoevento());
+
+        holder.setOnItemClickListener(currenEvento, clickListener);
     }
 
     public void addEvento(Eventos eventos) {
@@ -71,6 +74,7 @@ public class EventosListAdapter extends RecyclerView.Adapter<EventosListAdapter.
         eventosList.remove(eventos);
         notifyDataSetChanged();
     }
+
     @Override
     public int getItemCount() {
         return eventosList.size();
@@ -83,20 +87,29 @@ public class EventosListAdapter extends RecyclerView.Adapter<EventosListAdapter.
         ImageView imgEvento;
         @Bind(R.id.txtNombreEvento)
         TextView txtNombreEvento;
+        @Bind(R.id.txtLugar1)
+        TextView txtLugar1;
         @Bind(R.id.txtLugar)
         TextView txtLugar;
+        @Bind(R.id.txtFecha1)
+        TextView txtFecha1;
         @Bind(R.id.txtFecha)
         TextView txtFecha;
+        @Bind(R.id.txtHora1)
+        TextView txtHora1;
         @Bind(R.id.txtHora)
         TextView txtHora;
+        @Bind(R.id.txtTelefono1)
+        TextView txtTelefono1;
+        @Bind(R.id.txtTelefono)
+        TextView txtTelefono;
         @Bind(R.id.txtTipo)
         TextView txtTipo;
         @Bind(R.id.imgShare)
         ImageButton imgShare;
-        @Bind(R.id.imgFavorito)
-        ImageButton imgFavorito;
         @Bind(R.id.cv)
         CardView cv;
+
 
         private View view;
 

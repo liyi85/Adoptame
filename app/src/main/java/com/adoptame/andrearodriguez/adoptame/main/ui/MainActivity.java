@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.adoptame.andrearodriguez.adoptame.BebeAdoptaApp;
 import com.adoptame.andrearodriguez.adoptame.R;
@@ -25,6 +24,7 @@ import com.adoptame.andrearodriguez.adoptame.fundacioneslist.ui.FundationListAct
 import com.adoptame.andrearodriguez.adoptame.gatolist.ui.GatoListActivity;
 import com.adoptame.andrearodriguez.adoptame.main.MainPresenter;
 import com.adoptame.andrearodriguez.adoptame.otroslist.ui.OtrosListActivity;
+import com.adoptame.andrearodriguez.adoptame.perdidoslist.ui.PerdidosListActivity;
 import com.adoptame.andrearodriguez.adoptame.perrolist.ui.PerroListActivity;
 
 import java.util.List;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     Button imgPerro;
     @Bind(R.id.imgCat)
     Button imgCat;
-    @Bind(R.id.imgOtro)
+    @Bind(R.id.imgPerdidos)
     Button imgOtro;
     @Bind(R.id.imgEncontrar)
     Button imgEncontrar;
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.imgPerro, R.id.imgCat, R.id.imgOtro, R.id.imgEncontrar, R.id.imgFundation, R.id.imgEventos})
+    @OnClick({R.id.imgPerro, R.id.imgCat, R.id.imgPerdidos, R.id.imgEncontrar, R.id.imgFundation, R.id.imgEventos})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.imgPerro:
@@ -156,12 +156,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentG = new Intent(this, GatoListActivity.class);
                 startActivity(intentG);
                 break;
-            case R.id.imgOtro:
+            case R.id.imgPerdidos:
                 Intent intentO = new Intent(this, OtrosListActivity.class);
                 startActivity(intentO);
                 break;
             case R.id.imgEncontrar:
-                Toast.makeText(getApplicationContext(), "Estamos trabajando en esta sección", Toast.LENGTH_SHORT).show();
+                Intent intentP = new Intent(this, PerdidosListActivity.class);
+                startActivity(intentP);
                 break;
             case R.id.imgFundation:
                 Intent intentF = new Intent(this, FundationListActivity.class);

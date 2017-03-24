@@ -86,7 +86,7 @@ public class OtroListAdapter extends RecyclerView.Adapter<OtroListAdapter.ViewHo
 
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.imgOtro)
+        @Bind(R.id.imgPerdidos)
         ImageView imgOtro;
         @Bind(R.id.txtNombre)
         TextView txtNombre;

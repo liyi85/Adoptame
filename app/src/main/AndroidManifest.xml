@@ -99,7 +99,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.adoptame.andrearodriguez.adoptame.main.ui.MainActivity" />
         </activity>
-
         <activity
             android:name=".otrosdetail.ui.DetailOtrosActivity"
             android:screenOrientation="portrait"
@@ -110,6 +109,13 @@
         </activity>
         <activity
             android:name=".eventoslist.ui.EventosListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.adoptame.andrearodriguez.adoptame.main.ui.MainActivity" />
+        </activity>
+        <activity android:name=".perdidoslist.ui.PerdidosListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

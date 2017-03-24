@@ -30,6 +30,12 @@ import com.adoptame.andrearodriguez.adoptame.otroslist.di.OtroListModule;
 import com.adoptame.andrearodriguez.adoptame.otroslist.ui.OtroListView;
 import com.adoptame.andrearodriguez.adoptame.otroslist.ui.OtrosListFragment;
 import com.adoptame.andrearodriguez.adoptame.otroslist.ui.adapter.OnItemClickListenerOtros;
+import com.adoptame.andrearodriguez.adoptame.perdidoslist.adapter.OnItemClickPerdidos;
+import com.adoptame.andrearodriguez.adoptame.perdidoslist.di.DaggerPerdidoListComponent;
+import com.adoptame.andrearodriguez.adoptame.perdidoslist.di.PerdidoListComponent;
+import com.adoptame.andrearodriguez.adoptame.perdidoslist.di.PerdidosListModule;
+import com.adoptame.andrearodriguez.adoptame.perdidoslist.ui.PerdidosListFragment;
+import com.adoptame.andrearodriguez.adoptame.perdidoslist.ui.PerdidosListView;
 import com.adoptame.andrearodriguez.adoptame.perrolist.di.DaggerPerroLisComponent;
 import com.adoptame.andrearodriguez.adoptame.perrolist.di.PerroLisComponent;
 import com.adoptame.andrearodriguez.adoptame.perrolist.di.PerroListModule;
@@ -149,5 +155,13 @@ public class BebeAdoptaApp extends Application {
                 .eventosListModule(new EventosListModule(view, clickListenerE))
                 .build();
     }
-
+    public PerdidoListComponent getPerdidoListComponent (PerdidosListFragment fragment, PerdidosListView view, OnItemClickPerdidos clickPerdidos){
+        return DaggerPerdidoListComponent
+                .builder()
+                .bebeAdoptaAppModule(bebeAdoptaAppModule)
+                .domainModule(domainModule)
+                .libsModule(new LibsModule(fragment))
+                .perdidosListModule(new PerdidosListModule(view, clickPerdidos))
+                .build();
+    }
 }

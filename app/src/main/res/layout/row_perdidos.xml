@@ -66,6 +66,8 @@
                 android:hint="Sexo"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
+
+
             <TextView
                 android:id="@+id/txtEdad"
                 android:layout_width="wrap_content"
@@ -74,6 +76,8 @@
                 android:gravity="center"
                 android:hint="Edad"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -96,8 +100,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
-                    android:src="@android:drawable/btn_star_big_off"
-                    android:id="@+id/imgFavorito"
+                    android:src="@android:drawable/ic_menu_delete"
+                    android:id="@+id/imgDelete"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"/>

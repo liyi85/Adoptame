@@ -71,6 +71,45 @@
     <string name="main_titles_otros">Otros</string>
     <string name="main_otros_info">Otros</string>
     <string name="main_titles_eventos">Eventos</string>
+    <string name="main_titles_perdidos">Perdidos</string>
+
+
+    <string-array name="SelectEspecie">
+        <item>Perro</item>
+        <item>Gato</item>
+        <item>Hamster</item>
+        <item>Paloma</item>
+        <item>Ratón</item>
+        <item>Conejo</item>
+        <item>Caballo</item>
+        <item>Otros</item>
+        <item>OtrasAves</item>
+    </string-array>
+
+    <string-array name="SelectSexo">
+        <item>Hembra</item>
+        <item>Macho</item>
+    </string-array>
+
+    <string-array name="SelectVacuna">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="SelectEdad">
+        <item>Años</item>
+        <item>Meses</item>
+    </string-array>
+
+    <string-array name="SelectDiscapa">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="SelectEsteril">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
 
 
 </resources>

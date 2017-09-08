@@ -16,6 +16,8 @@
             android:gravity="center"
             android:text="Nombre"
             android:background="#E2E2E2"
+            android:typeface="serif"
+            android:textStyle="italic"
             android:textColor="@android:color/black"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
@@ -52,6 +54,8 @@
                     android:layout_weight="1"
                     android:text="vacunado"
                     android:textColor="@android:color/black"
+                    android:typeface="serif"
+                    android:textStyle="italic"
                     android:textAppearance="?android:attr/textAppearanceSmall"/>
 
                 <TextView
@@ -59,6 +63,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:typeface="serif"
+                    android:textStyle="italic"
                     android:text="vacunado" />
 
             </LinearLayout>
@@ -75,12 +81,16 @@
                     android:layout_weight="1"
                     android:text="esterilizado"
                     android:textColor="@android:color/black"
+                    android:typeface="serif"
+                    android:textStyle="italic"
                     android:textAppearance="?android:attr/textAppearanceSmall"/>
                 <TextView
                     android:id="@+id/txtEsterilizacion"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:typeface="serif"
+                    android:textStyle="italic"
                     android:text="esterilizado" />
 
             </LinearLayout>
@@ -97,6 +107,8 @@
                     android:layout_weight="1"
                     android:text="discapacitado"
                     android:textColor="@android:color/black"
+                    android:typeface="serif"
+                    android:textStyle="italic"
                     android:textAppearance="?android:attr/textAppearanceSmall"/>
 
                 <TextView
@@ -104,6 +116,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:typeface="serif"
+                    android:textStyle="italic"
                     android:text="discapacitado"/>
 
             </LinearLayout>
@@ -130,6 +144,8 @@
                 android:layout_weight="1"
                 android:text="Edad"
                 android:textColor="@android:color/black"
+                android:typeface="serif"
+                android:textStyle="italic"
                 android:textAppearance="?android:attr/textAppearanceSmall"/>
 
             <TextView
@@ -137,6 +153,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:typeface="serif"
+                android:textStyle="italic"
                 android:text="Edad" />
 
         </LinearLayout>
@@ -153,6 +171,8 @@
                 android:layout_weight="1"
                 android:text="Tamaño"
                 android:textColor="@android:color/black"
+                android:typeface="serif"
+                android:textStyle="italic"
                 android:textAppearance="?android:attr/textAppearanceSmall"/>
 
             <TextView
@@ -160,6 +180,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:typeface="serif"
+                android:textStyle="italic"
                 android:text="Tamaño" />
 
         </LinearLayout>
@@ -176,6 +198,8 @@
                     android:layout_weight="1"
                     android:text="Sexo"
                     android:textColor="@android:color/black"
+                    android:typeface="serif"
+                    android:textStyle="italic"
                     android:textAppearance="?android:attr/textAppearanceSmall"/>
 
                 <TextView
@@ -183,6 +207,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:typeface="serif"
+                    android:textStyle="italic"
                     android:text="Sexo" />
 
             </LinearLayout>

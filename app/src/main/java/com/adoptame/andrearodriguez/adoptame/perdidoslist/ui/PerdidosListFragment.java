@@ -188,7 +188,7 @@ public class PerdidosListFragment extends Fragment implements PerdidosListView, 
     @OnClick(R.id.fab)
     public void onViewClicked() {
         checkCameraPermission();
-        //new AddPerdidoFragment().show(getActivity().getSupportFragmentManager(), getString(R.string.addcontact_messagge_title));
+        //new AddPerdidosFragment().show(getActivity().getSupportFragmentManager(), getString(R.string.addcontact_messagge_title));
     }
     private void checkCameraPermission() {
         if (ContextCompat.checkSelfPermission(getActivity(),

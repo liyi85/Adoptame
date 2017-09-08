@@ -164,4 +164,14 @@ public class BebeAdoptaApp extends Application {
                 .perdidosListModule(new PerdidosListModule(view, clickPerdidos))
                 .build();
     }
+
+//    public AddPerdidosComponent getAddPerdidosComponent (AddPerdidoView view){
+//        return DaggerAddPerdidosComponent
+//                .builder()
+//                .bebeAdoptaAppModule(bebeAdoptaAppModule)
+//                .domainModule(domainModule)
+//                .libsModule(new LibsModule(null))
+//                .addPerdidosModule(new AddPerdidosModule(view))
+//                .build();
+//    }
 }

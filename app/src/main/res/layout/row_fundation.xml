@@ -30,7 +30,8 @@
                 android:layout_marginTop="10dp"
                 android:id="@+id/txtNombre"
                 android:layout_width="@dimen/largo_row_perro"
-
+                android:typeface="serif"
+                android:textStyle="italic"
                 android:layout_height="wrap_content"
                 android:hint="Nombre"
                 android:textColor="@android:color/black"
@@ -44,6 +45,8 @@
                 android:layout_alignStart="@+id/txtNombre"
                 android:layout_below="@+id/txtNombre"
                 android:hint="Dirección"
+                android:typeface="serif"
+                android:textStyle="italic"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
@@ -54,6 +57,8 @@
                 android:layout_alignStart="@+id/txtDireccion"
                 android:layout_below="@+id/txtDireccion"
                 android:hint="Correo"
+                android:typeface="serif"
+                android:textStyle="italic"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
             <TextView
                 android:id="@+id/txtTelefono"
@@ -63,6 +68,8 @@
                 android:layout_alignStart="@+id/txtCorreo"
                 android:layout_below="@+id/txtCorreo"
                 android:hint="Telefono"
+                android:typeface="serif"
+                android:textStyle="italic"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
             </RelativeLayout>
             <LinearLayout

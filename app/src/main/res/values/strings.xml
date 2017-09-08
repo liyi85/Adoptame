@@ -111,5 +111,14 @@
         <item>No</item>
     </string-array>
 
+    <string-array name="SelectTamano">
+        <item>Pequeño</item>
+        <item>Mediano</item>
+        <item>Grande</item>
+        <item>MuyGrande</item>
+    </string-array>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
 
 </resources>

@@ -44,11 +44,11 @@ public class PerdidosListRepositoryImp implements PerdidosListRepository{
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot) {
                 Bebe bebe = dataSnapshot.getValue(Bebe.class);
-                String email = firebasePerdidosAPI.getAuthEmail();
+                //String email = firebasePerdidosAPI.getAuthEmail();
                 bebe.setId(dataSnapshot.getKey());
 
-                boolean publishedByMy = (bebe.getEmail()).equals(email);
-                bebe.setPublishedByMe(publishedByMy);
+//                boolean publishedByMy = (bebe.getEmail()).equals(email);
+//                bebe.setPublishedByMe(publishedByMy);
                 post(PerdidosListEvent.READ_EVENT, bebe);
             }
 

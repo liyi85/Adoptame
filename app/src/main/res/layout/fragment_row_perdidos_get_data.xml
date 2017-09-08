@@ -10,6 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
         <ImageButton
             android:layout_width="140dp"
             android:layout_height="150dp"
@@ -18,6 +23,72 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/wraperTelefono">
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/txtPhone"
+                        android:layout_height="match_parent"
+                        android:inputType="phone"
+                        android:hint="Celular"
+                        android:textColor="@android:color/black"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="match_parent" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/wraperemail">
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/txtEmail"
+                        android:layout_height="match_parent"
+                        android:inputType="textEmailAddress"
+                        android:hint="Email"
+                        android:textColor="@android:color/black"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="match_parent" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/wrapercaracterisitcas">
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/txtCaracteristicas"
+                        android:layout_height="match_parent"
+                        android:hint="Descripción"
+                        android:textColor="@android:color/black"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="match_parent" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -114,7 +185,23 @@
                     android:id="@+id/spinnerSexo" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tamaño"
+                    android:id="@+id/txtTamano"
+                    android:paddingBottom="25dp"/>
 
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinnerTamano"
+                    android:layout_toRightOf="@+id/txtTamano" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -164,27 +251,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/spinnerDiscapacidad" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/wrapercaracterisitcas">
-                    <EditText
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/txtCaracteristicas"
-                        android:layout_height="match_parent"
-                        android:hint="Descripción"
-                        android:textColor="@android:color/black"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_width="match_parent" />
-                </android.support.design.widget.TextInputLayout>
-
             </LinearLayout>
 
         </LinearLayout>

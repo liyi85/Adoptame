@@ -46,6 +46,29 @@ public class Bebe extends BaseModel{
 
     private String especie;
 
+    private String description;
+    private String phone;
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getEspecie() {
         return especie;
     }

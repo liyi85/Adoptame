@@ -7,8 +7,6 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
-import java.util.Map;
-
 /**
  * Created by andrearodriguez on 3/24/17.
  */
@@ -21,6 +19,7 @@ public class FirebasePerdidosAPI {
     public FirebasePerdidosAPI(Firebase firebase) {
         this.firebase = firebase.child("Perdidos");
     }
+
     public void checkForData(final FirebaActionListenerCallback listenerCallback){
         firebase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -90,14 +89,14 @@ public class FirebasePerdidosAPI {
         listenerCallback.onSucces();
     }
 
-    public String getAuthEmail(){
-        String email = null;
-
-        if (firebase.getAuth() != null){
-            Map<String, Object> providerData = firebase.getAuth().getProviderData();
-            email = providerData.get("email").toString();
-        }
-        return email;
-
-    }
+//    public String getAuthEmail(){
+//        String email = null;
+//
+//        if (firebase.getAuth() != null){
+//            Map<String, Object> providerData = firebase.getAuth().getProviderData();
+//            email = providerData.get("email").toString();
+//        }
+//        return email;
+//
+//    }
 }

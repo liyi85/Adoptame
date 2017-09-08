@@ -78,8 +78,6 @@ public class FirebaseOtrosAPI {
         return firebase.push().getKey();
     }
 
-
-
     public void update(Bebe bebe){
         this.firebase.child(bebe.getId()).setValue(bebe);
 

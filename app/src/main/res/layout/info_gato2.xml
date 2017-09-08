@@ -17,6 +17,7 @@
             android:background="#E2E2E2"
             android:typeface="serif"
             android:textStyle="italic"
+            android:drawableRight="@drawable/ic_huellas_de_patas_de_perro"
             android:textColor="@android:color/black"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 

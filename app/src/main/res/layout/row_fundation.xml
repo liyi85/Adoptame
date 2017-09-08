@@ -35,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Nombre"
                 android:textColor="@android:color/black"
+                android:drawableRight="@drawable/ic_huellas_de_patas_de_perro"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView

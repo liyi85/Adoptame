@@ -40,17 +40,14 @@
             android:padding="2dp"
             android:orientation="vertical">
             <TextView
+                style="@style/titulos"
                 android:id="@+id/txtNombre"
                 android:layout_width="wrap_content"
-                android:layout_weight="0.6"
+                android:layout_weight="1"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:hint="Nombre"
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:textColor="@android:color/black"
-                android:drawableRight="@drawable/ic_huellas_de_patas_de_perro"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:hint="@string/nombre"
+                />
 
             <TextView
                 android:id="@+id/txtSexo"
@@ -58,10 +55,8 @@
                 android:layout_weight="0.6"
                 android:layout_height="0dp"
                 android:gravity="center"
-                android:hint="Sexo"
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:hint="@string/sexo"
+                style="@style/contenido"/>
 
             <TextView
                 android:id="@+id/txtEdad"
@@ -69,20 +64,16 @@
                 android:layout_weight="0.6"
                 android:layout_height="0dp"
                 android:gravity="center"
-                android:hint="Edad"
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:hint="@string/edad"
+                style="@style/contenido" />
             <TextView
                 android:id="@+id/txtTamano"
                 android:layout_width="wrap_content"
                 android:layout_weight="0.6"
                 android:layout_height="0dp"
                 android:gravity="center"
-                android:hint="Tamaño"
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:hint="@string/tamano"
+                style="@style/contenido" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -107,7 +98,6 @@
                         android:background="@android:color/transparent"
                         android:src="@android:drawable/btn_star_big_off"
                         android:id="@+id/imgFavorito"
-
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"/>

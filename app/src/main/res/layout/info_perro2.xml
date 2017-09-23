@@ -14,13 +14,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Fundacion"
+            android:text="@string/fundacion"
             android:background="#E2E2E2"
-            android:textColor="@android:color/black"
-            android:typeface="serif"
-            android:textStyle="italic"
-            android:drawableRight="@drawable/ic_huellas_de_patas_de_perro"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+            style="@style/titulos"/>
 
     </LinearLayout>
 
@@ -55,18 +51,16 @@
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_weight="0.6"
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:text="Telefono" />
+                android:text="@string/telefono"
+                style="@style/contenido"/>
 
             <TextView
                 android:id="@+id/txtTelefono"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:text=""
+                android:text="@string/telefono"
+                style="@style/contenido2"
                 />
 
         </LinearLayout>
@@ -88,10 +82,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:text="Email"
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:gravity="center_vertical"/>
+                android:text="@string/email"
+                android:gravity="center_vertical"
+                style="@style/contenido"/>
 
 
             <TextView
@@ -99,9 +92,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:text=""/>
+                android:text="@string/email"
+                style="@style/contenido2"/>
 
         </LinearLayout>
 
@@ -121,18 +113,16 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:typeface="serif"
-                android:textStyle="italic"
                 android:gravity="center_vertical"
-                android:text="Direccion" />
+                android:text="@string/direccion"
+                style="@style/contenido"/>
             <TextView
                 android:id="@+id/txtDireccion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:text="" />
+                android:text="@string/direccion"
+                style="@style/contenido2"/>
 
         </LinearLayout>
 
@@ -153,10 +143,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.6"
-                    android:text="Persona Encargada"
-                    android:typeface="serif"
-                    android:textStyle="italic"
-                    android:gravity="center_vertical"/>
+                    android:text="@string/persona_encargada"
+                    android:gravity="center_vertical"
+                    style="@style/contenido"/>
 
 
                 <TextView
@@ -164,9 +153,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:typeface="serif"
-                    android:textStyle="italic"
-                    android:text=""/>
+                    android:text="@string/persona_encargada"
+                    style="@style/contenido2"/>
 
             </LinearLayout>
 

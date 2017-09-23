@@ -50,15 +50,11 @@
                 <TextView
                     android:layout_marginTop="10dp"
                     android:id="@+id/txtNombreEvento"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:hint="Nombre del Evento"
-                    android:typeface="serif"
-                    android:textStyle="italic"
-                    android:textColor="@android:color/black"
-                    android:drawableRight="@drawable/ic_huellas_de_patas_de_perro"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="@string/nombre_evento"
+                    style="@style/titulos" />
             </LinearLayout>
 
 
@@ -73,21 +69,17 @@
                     android:id="@+id/txtLugar1"
                     android:layout_width="wrap_content"                            android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Lugar"
-                    android:typeface="serif"
-                    android:textStyle="italic"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:text="@string/lugar"
+                    style="@style/contenido" />
 
                 <TextView
                     android:id="@+id/txtLugar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:hint="Lugar"
+                    android:hint="@string/lugar"
                     android:layout_marginLeft="30dp"
-                    android:typeface="serif"
-                    android:textStyle="italic"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    style="@style/contenido2" />
             </LinearLayout>
 
             <LinearLayout
@@ -102,21 +94,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Fecha"
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:text="@string/fecha"
+                style="@style/contenido" />
 
                 <TextView
-                android:id="@+id/txtFecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Fecha"
-                    android:typeface="serif"
-                    android:textStyle="italic"
-                android:layout_marginLeft="30dp"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:id="@+id/txtFecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/fecha"
+                    android:layout_marginLeft="30dp"
+                    style="@style/contenido2" />
             </LinearLayout>
 
             <LinearLayout
@@ -131,20 +119,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Hora"
-                    android:typeface="serif"
-                    android:textStyle="italic"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:text="@string/hora"
+                    style="@style/contenido" />
             <TextView
                 android:id="@+id/txtHora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:hint="Hora"
-                android:typeface="serif"
-                android:textStyle="italic"
+                android:hint="@string/hora"
                 android:layout_marginLeft="30dp"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                style="@style/contenido2" />
 
             </LinearLayout>
 
@@ -160,20 +144,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Telefono"
-                    android:typeface="serif"
-                    android:textStyle="italic"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:text="@string/telefono"
+                    style="@style/contenido" />
                 <TextView
                     android:id="@+id/txtTelefono"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:hint="Telefono"
-                    android:typeface="serif"
-                    android:textStyle="italic"
+                    android:hint="@string/telefono"
                     android:layout_marginLeft="10dp"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    style="@style/contenido2" />
 
             </LinearLayout>
 
@@ -190,10 +170,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:hint="Tipo de Evento"
-                    android:typeface="serif"
-                    android:textStyle="italic"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:hint="@string/tipo_evento"
+                    style="@style/contenido" />
 
             </LinearLayout>
 

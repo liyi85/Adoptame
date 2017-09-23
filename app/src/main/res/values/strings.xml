@@ -119,6 +119,24 @@
     </string-array>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="fundacion">Fundacion</string>
+    <string name="telefono">Telefono</string>
+    <string name="email">Email</string>
+    <string name="direccion">Direccion</string>
+    <string name="persona_encargada">Persona Encargada</string>
+    <string name="nombre">Nombre</string>
+    <string name="vacunado">Vacunado</string>
+    <string name="esterilizado">Esterilizado</string>
+    <string name="discapacitado">Discapacitado</string>
+    <string name="edad">Edad</string>
+    <string name="tamano">Tamaño</string>
+    <string name="sexo">Sexo</string>
+    <string name="especie">Especie</string>
+    <string name="nombre_evento">Nombre del Evento</string>
+    <string name="lugar">Lugar</string>
+    <string name="fecha">Fecha</string>
+    <string name="hora">Hora</string>
+    <string name="tipo_evento">Tipo de Evento</string>
 
 
 </resources>

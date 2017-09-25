@@ -104,6 +104,7 @@
                     android:layout_weight="1"
                     android:text="@string/discapacitado"
                     style="@style/contenido2"/>
+                
 
             </LinearLayout>
 

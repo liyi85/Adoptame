@@ -137,6 +137,8 @@
     <string name="fecha">Fecha</string>
     <string name="hora">Hora</string>
     <string name="tipo_evento">Tipo de Evento</string>
+    <string name="celular">Celular</string>
+    <string name="descripcion">Descripción</string>
 
 
 </resources>
